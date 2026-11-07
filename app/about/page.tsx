@@ -110,22 +110,22 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative h-48 rounded-lg overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2940&auto=format&fit=crop"
-                    alt="Construction site"
+                    src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=2940&auto=format&fit=crop"
+                    alt="Dalmia cement bags"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="relative h-48 rounded-lg overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2940&auto=format&fit=crop"
-                    alt="Building structure"
+                    src="https://images.unsplash.com/photo-1625527575307-616f0bb84ad2?q=80&w=2940&auto=format&fit=crop"
+                    alt="TMT steel reinforcement bars"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="relative h-48 rounded-lg overflow-hidden col-span-2">
                   <img
-                    src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2940&auto=format&fit=crop"
-                    alt="Construction materials"
+                    src="https://images.unsplash.com/photo-1628624747186-a5cf8d879f04?q=80&w=2940&auto=format&fit=crop"
+                    alt="Roofing sheets"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -209,22 +209,22 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative h-52 rounded-lg overflow-hidden col-span-2">
                   <img
-                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2940&auto=format&fit=crop"
-                    alt="Construction materials warehouse"
+                    src="https://images.unsplash.com/photo-1565118531796-763e5082d113?q=80&w=2940&auto=format&fit=crop"
+                    alt="Structural steel beams"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="relative h-44 rounded-lg overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=2940&auto=format&fit=crop"
-                    alt="Hardware store"
+                    src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2940&auto=format&fit=crop"
+                    alt="Asian Paints paint cans"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="relative h-44 rounded-lg overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2940&auto=format&fit=crop"
-                    alt="Construction tools"
+                    src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=2940&auto=format&fit=crop"
+                    alt="Construction hardware and tools"
                     className="w-full h-full object-cover"
                   />
                 </div>
