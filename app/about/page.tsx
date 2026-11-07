@@ -33,9 +33,9 @@ export default function AboutPage() {
   ];
 
   const stats = [
-    { number: "6+", label: "Premium Brands" },
-    { number: "100+", label: "Happy Customers" },
-    { number: "24/7", label: "Support Available" },
+    { number: "20+", label: "Premium Brands" },
+    { number: "100K+", label: "Happy Customers" },
+    { number: "2008", label: "Established Since" },
     { number: "100%", label: "Authentic Products" },
   ];
 
@@ -78,14 +78,15 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-concrete text-lg leading-relaxed">
                 <p>
-                  Sri Ganapathy Traders is a leading wholesale and retail supplier
-                  of construction materials in Nagercoil, serving contractors,
+                  Since 2008, Sri Ganapathy Traders has been a leading wholesale
+                  and retail supplier of construction materials in Nagercoil,
+                  serving over 100,000 satisfied customers including contractors,
                   builders, civil engineers, and individual customers across
                   Kanniyakumari District, Tamil Nadu.
                 </p>
                 <p>
                   We specialize in supplying premium construction materials from
-                  India's most trusted brands, including Dalmia Cement, Tata
+                  more than 20 trusted brands, including Dalmia Cement, Tata
                   Tiscon TMT Bars, Visaka and Tata Roofing Sheets, Tata Structura
                   Steel, Asian Paints, and a comprehensive range of construction
                   hardware.

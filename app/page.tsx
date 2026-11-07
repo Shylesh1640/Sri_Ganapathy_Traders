@@ -56,12 +56,36 @@ export default function Home() {
   }, []);
 
   const products = [
-    { name: "Cement", brand: "Dalmia", icon: "🏗️" },
-    { name: "TMT Bars", brand: "Tata Tiscon", icon: "⚙️" },
-    { name: "Roofing Sheets", brand: "Visaka & Tata", icon: "🏠" },
-    { name: "Structural Steel", brand: "Tata Structura", icon: "🔩" },
-    { name: "Paints", brand: "Asian Paints", icon: "🎨" },
-    { name: "Construction Hardware", brand: "Premium Quality", icon: "🔨" },
+    {
+      name: "Cement",
+      brand: "Dalmia",
+      image: "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=400&auto=format&fit=crop"
+    },
+    {
+      name: "TMT Bars",
+      brand: "Tata Tiscon",
+      image: "https://images.unsplash.com/photo-1625527575307-616f0bb84ad2?q=80&w=400&auto=format&fit=crop"
+    },
+    {
+      name: "Roofing Sheets",
+      brand: "Visaka & Tata",
+      image: "https://images.unsplash.com/photo-1632778506495-44d045f0e428?q=80&w=400&auto=format&fit=crop"
+    },
+    {
+      name: "Structural Steel",
+      brand: "Tata Structura",
+      image: "https://images.unsplash.com/photo-1565118531796-763e5082d113?q=80&w=400&auto=format&fit=crop"
+    },
+    {
+      name: "Paints",
+      brand: "Asian Paints",
+      image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=400&auto=format&fit=crop"
+    },
+    {
+      name: "Construction Hardware",
+      brand: "Premium Quality",
+      image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=400&auto=format&fit=crop"
+    },
   ];
 
   const features = [
@@ -122,9 +146,9 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.5 }}
             className="text-lg md:text-xl text-concrete max-w-3xl mx-auto mb-12 leading-relaxed"
           >
-            From foundations to finishing touches, discover dependable
-            construction materials for every stage of your project. Quality
-            brands, wholesale and retail supply, and service you can count on.
+            Since 2008, serving 100,000+ satisfied customers with premium
+            construction materials from 20+ trusted brands. From foundations to
+            finishing touches, quality you can count on.
           </motion.p>
 
           <motion.div
@@ -186,19 +210,28 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-charcoal/80 backdrop-blur-sm border border-concrete/20 rounded-lg p-8 card-hover"
+                className="bg-charcoal/80 backdrop-blur-sm border border-concrete/20 rounded-lg overflow-hidden card-hover"
               >
-                <div className="text-5xl mb-4">{product.icon}</div>
-                <h3 className="font-barlow font-bold text-2xl text-white mb-2">
-                  {product.name}
-                </h3>
-                <p className="text-orange font-semibold mb-4">{product.brand}</p>
-                <Link
-                  href="/products"
-                  className="inline-flex items-center text-white hover:text-orange transition-colors duration-300"
-                >
-                  Learn More <ArrowRight size={16} className="ml-2" />
-                </Link>
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent"></div>
+                </div>
+                <div className="p-6">
+                  <h3 className="font-barlow font-bold text-2xl text-white mb-2">
+                    {product.name}
+                  </h3>
+                  <p className="text-orange font-semibold mb-4">{product.brand}</p>
+                  <Link
+                    href="/products"
+                    className="inline-flex items-center text-white hover:text-orange transition-colors duration-300"
+                  >
+                    Learn More <ArrowRight size={16} className="ml-2" />
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -217,15 +250,15 @@ export default function Home() {
                 Your Trusted Construction Materials Partner
               </h2>
               <p className="text-concrete text-lg leading-relaxed mb-6">
-                Sri Ganapathy Traders is a leading wholesale and retail supplier
-                of construction materials in Nagercoil, serving contractors,
-                builders, and individual customers across Kanniyakumari
+                Since 2008, Sri Ganapathy Traders has been serving over 100,000
+                satisfied customers as a leading wholesale and retail supplier
+                of construction materials in Nagercoil, across Kanniyakumari
                 District.
               </p>
               <p className="text-concrete text-lg leading-relaxed mb-8">
-                We provide premium quality cement, TMT bars, roofing sheets,
-                structural steel, paints, and construction hardware from India's
-                most trusted brands.
+                We provide premium quality materials from 20+ trusted brands
+                including cement, TMT bars, roofing sheets, structural steel,
+                paints, and construction hardware.
               </p>
               <Link href="/about" className="btn-primary inline-block">
                 Learn More About Us
@@ -298,31 +331,45 @@ export default function Home() {
         <div className="container-custom">
           <div className="animate-on-scroll text-center mb-16">
             <h2 className="font-barlow font-bold text-5xl md:text-6xl text-white mb-4">
-              Trusted Brands
+              20+ Trusted Brands
             </h2>
             <p className="text-concrete text-lg">
               We supply products from India's most reliable manufacturers
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {[
-              "Dalmia",
+              "Dalmia Cement",
               "Tata Tiscon",
               "Visaka",
               "Tata Sheets",
               "Tata Structura",
               "Asian Paints",
+              "Birla Cement",
+              "JSW Steel",
+              "Kamdhenu",
+              "Everest Industries",
+              "Berger Paints",
+              "Nerolac",
+              "Hettich",
+              "Saint-Gobain",
+              "Shree Cement",
+              "Hindware",
+              "Kajaria Tiles",
+              "Somany",
+              "Greenply",
+              "Century Plyboards",
             ].map((brand, index) => (
               <motion.div
                 key={brand}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white/5 backdrop-blur-sm border border-concrete/20 rounded-lg p-6 flex items-center justify-center hover:bg-white/10 transition-colors duration-300"
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                className="bg-white/5 backdrop-blur-sm border border-concrete/20 rounded-lg p-6 flex items-center justify-center hover:bg-white/10 hover:border-orange/30 transition-all duration-300 min-h-[100px]"
               >
-                <div className="font-barlow font-bold text-white text-center">
+                <div className="font-barlow font-bold text-white text-center text-sm">
                   {brand}
                 </div>
               </motion.div>

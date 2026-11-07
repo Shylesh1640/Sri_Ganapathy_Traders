@@ -50,32 +50,32 @@ export default function WholesalePage() {
   const categories = [
     {
       name: "Cement (Dalmia)",
-      icon: "🏗️",
+      image: "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=400&auto=format&fit=crop",
       description: "Bulk cement supply for large construction projects",
     },
     {
       name: "TMT Bars (Tata Tiscon)",
-      icon: "⚙️",
+      image: "https://images.unsplash.com/photo-1625527575307-616f0bb84ad2?q=80&w=400&auto=format&fit=crop",
       description: "Wholesale TMT reinforcement steel in all standard sizes",
     },
     {
       name: "Roofing Sheets (Visaka & Tata)",
-      icon: "🏠",
+      image: "https://images.unsplash.com/photo-1632778506495-44d045f0e428?q=80&w=400&auto=format&fit=crop",
       description: "Bulk roofing solutions for residential and industrial projects",
     },
     {
       name: "Structural Steel (Tata Structura)",
-      icon: "🔩",
+      image: "https://images.unsplash.com/photo-1565118531796-763e5082d113?q=80&w=400&auto=format&fit=crop",
       description: "Complete structural steel requirements for your projects",
     },
     {
       name: "Paints (Asian Paints)",
-      icon: "🎨",
+      image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=400&auto=format&fit=crop",
       description: "Wholesale supply of paints and finishes for large projects",
     },
     {
       name: "Construction Hardware",
-      icon: "🔨",
+      image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=400&auto=format&fit=crop",
       description: "Bulk supply of essential construction hardware and accessories",
     },
   ];
@@ -94,8 +94,9 @@ export default function WholesalePage() {
               Wholesale <span className="text-gradient">Supply</span>
             </h1>
             <p className="text-concrete text-lg md:text-xl max-w-3xl mx-auto mb-8">
-              Competitive bulk rates for contractors, builders, developers, and
-              large construction projects. Quality materials at wholesale prices.
+              Since 2008, serving 100,000+ customers with competitive bulk rates.
+              Quality materials from 20+ trusted brands at wholesale prices for
+              contractors, builders, and large projects.
             </p>
             <a
               href="https://wa.me/919486579329?text=Hi%2C%20I%27m%20interested%20in%20wholesale%20enquiry.%20Please%20provide%20details."
@@ -179,20 +180,29 @@ export default function WholesalePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-charcoal/80 backdrop-blur-sm border border-concrete/20 rounded-lg p-8 hover:border-orange/50 transition-all duration-300"
+                className="bg-charcoal/80 backdrop-blur-sm border border-concrete/20 rounded-lg overflow-hidden hover:border-orange/50 transition-all duration-300"
               >
-                <div className="text-5xl mb-4">{category.icon}</div>
-                <h3 className="font-barlow font-bold text-2xl text-white mb-3">
-                  {category.name}
-                </h3>
-                <p className="text-concrete mb-6">{category.description}</p>
-                <button
-                  onClick={() => handleWhatsAppClick(category.name)}
-                  className="w-full bg-orange hover:bg-orange/90 text-white font-semibold py-3 rounded-md transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
-                >
-                  <MessageCircle size={18} />
-                  <span>Get Quote</span>
-                </button>
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={category.image}
+                    alt={category.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent"></div>
+                </div>
+                <div className="p-6">
+                  <h3 className="font-barlow font-bold text-2xl text-white mb-3">
+                    {category.name}
+                  </h3>
+                  <p className="text-concrete mb-6">{category.description}</p>
+                  <button
+                    onClick={() => handleWhatsAppClick(category.name)}
+                    className="w-full bg-orange hover:bg-orange/90 text-white font-semibold py-3 rounded-md transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
+                  >
+                    <MessageCircle size={18} />
+                    <span>Get Quote</span>
+                  </button>
+                </div>
               </motion.div>
             ))}
           </div>

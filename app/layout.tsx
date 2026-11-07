@@ -4,12 +4,12 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Sri Ganapathy Traders | Wholesale & Retail Construction Supplies",
-  description: "Premium construction materials supplier in Nagercoil. Dalmia Cement, Tata Tiscon TMT, Visaka Roofing, Asian Paints. Wholesale and retail supply for contractors and builders.",
-  keywords: "construction materials Nagercoil, cement dealers Nagercoil, TMT steel suppliers, roofing sheets Kanniyakumari, paint dealers Nagercoil, wholesale construction materials",
+  title: "Sri Ganapathy Traders | Wholesale & Retail Construction Supplies Since 2008",
+  description: "Serving 100K+ customers since 2008. Premium construction materials supplier in Nagercoil with 20+ trusted brands. Dalmia Cement, Tata Tiscon TMT, Visaka Roofing, Asian Paints. Wholesale and retail supply.",
+  keywords: "construction materials Nagercoil, cement dealers Nagercoil, TMT steel suppliers, roofing sheets Kanniyakumari, paint dealers Nagercoil, wholesale construction materials, Sri Ganapathy Traders",
   openGraph: {
-    title: "Sri Ganapathy Traders | Construction Materials Supplier",
-    description: "Premium construction materials supplier in Nagercoil. Quality brands, wholesale and retail supply.",
+    title: "Sri Ganapathy Traders | Construction Materials Supplier Since 2008",
+    description: "Serving 100K+ customers with 20+ premium brands. Quality construction materials, wholesale and retail supply in Nagercoil.",
     type: "website",
     locale: "en_IN",
   },
