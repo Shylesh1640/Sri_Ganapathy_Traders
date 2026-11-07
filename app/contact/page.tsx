@@ -140,6 +140,26 @@ export default function ContactPage() {
                   </div>
                 </div>
 
+                {/* Email */}
+                <div className="bg-navy/30 backdrop-blur-sm border border-concrete/20 rounded-lg p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-orange rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-barlow font-bold text-lg text-white mb-2">
+                        Email Us
+                      </h3>
+                      <a
+                        href="mailto:sriganapathiselva@gmail.com"
+                        className="text-concrete hover:text-orange transition-colors duration-300 break-all"
+                      >
+                        sriganapathiselva@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Location */}
                 <div className="bg-navy/30 backdrop-blur-sm border border-concrete/20 rounded-lg p-6">
                   <div className="flex items-start space-x-4">

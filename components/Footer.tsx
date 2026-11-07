@@ -126,6 +126,15 @@ export default function Footer() {
               </li>
               <li>
                 <a
+                  href="mailto:sriganapathiselva@gmail.com"
+                  className="flex items-center space-x-3 text-concrete hover:text-orange transition-colors duration-300"
+                >
+                  <Mail size={18} />
+                  <span className="text-sm">sriganapathiselva@gmail.com</span>
+                </a>
+              </li>
+              <li>
+                <a
                   href="https://maps.app.goo.gl/65LzcvXVvUZ6Gze46"
                   target="_blank"
                   rel="noopener noreferrer"

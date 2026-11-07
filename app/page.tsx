@@ -233,12 +233,28 @@ export default function Home() {
             </div>
 
             <div className="animate-on-scroll">
-              <div className="relative h-96 rounded-lg overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2940&auto=format&fit=crop"
-                  alt="Construction Materials"
-                  className="w-full h-full object-cover"
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="relative h-48 rounded-lg overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2940&auto=format&fit=crop"
+                    alt="Construction Site"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative h-48 rounded-lg overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1590496793907-4102a7d6d5fb?q=80&w=2940&auto=format&fit=crop"
+                    alt="Building Materials"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative h-48 rounded-lg overflow-hidden col-span-2">
+                  <img
+                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2940&auto=format&fit=crop"
+                    alt="Construction Materials Warehouse"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>

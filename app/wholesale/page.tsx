@@ -199,9 +199,39 @@ export default function WholesalePage() {
         </div>
       </section>
 
-      {/* Who We Serve */}
+      {/* Visual Gallery */}
       <section className="section-padding bg-charcoal">
         <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
+          >
+            <div className="relative h-64 rounded-lg overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?q=80&w=2940&auto=format&fit=crop"
+                alt="Construction materials delivery"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative h-64 rounded-lg overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?q=80&w=2940&auto=format&fit=crop"
+                alt="Warehouse operations"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative h-64 rounded-lg overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1597266924224-14c3dc479af6?q=80&w=2940&auto=format&fit=crop"
+                alt="Building project"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

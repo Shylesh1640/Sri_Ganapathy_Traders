@@ -47,7 +47,7 @@ const products = [
     description:
       "Complete range of interior and exterior paints, primers, and finishes. Superior coverage, durability, and vibrant color options for all surfaces.",
     image:
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2940&auto=format&fit=crop",
     category: "Finishing Materials",
   },
   {
@@ -56,7 +56,7 @@ const products = [
     description:
       "Essential construction hardware and accessories including fasteners, tools, safety equipment, and building materials for complete construction needs.",
     image:
-      "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=2940&auto=format&fit=crop",
     category: "Hardware & Accessories",
   },
 ];

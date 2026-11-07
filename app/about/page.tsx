@@ -106,12 +106,28 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="relative h-96 rounded-lg overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2940&auto=format&fit=crop"
-                  alt="Construction site"
-                  className="w-full h-full object-cover"
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="relative h-48 rounded-lg overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2940&auto=format&fit=crop"
+                    alt="Construction site"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative h-48 rounded-lg overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2940&auto=format&fit=crop"
+                    alt="Building structure"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative h-48 rounded-lg overflow-hidden col-span-2">
+                  <img
+                    src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2940&auto=format&fit=crop"
+                    alt="Construction materials"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </motion.div>
           </div>
@@ -189,12 +205,28 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="relative h-96 rounded-lg overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2940&auto=format&fit=crop"
-                  alt="Construction materials"
-                  className="w-full h-full object-cover"
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="relative h-52 rounded-lg overflow-hidden col-span-2">
+                  <img
+                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2940&auto=format&fit=crop"
+                    alt="Construction materials warehouse"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative h-44 rounded-lg overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=2940&auto=format&fit=crop"
+                    alt="Hardware store"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative h-44 rounded-lg overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2940&auto=format&fit=crop"
+                    alt="Construction tools"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </motion.div>
 

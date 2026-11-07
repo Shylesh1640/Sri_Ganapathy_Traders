@@ -17,7 +17,7 @@ const brands = [
       "Consistent quality",
     ],
     image:
-      "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2940&auto=format&fit=crop",
   },
   {
     name: "Tata Tiscon",
@@ -31,7 +31,7 @@ const brands = [
       "Excellent weldability",
     ],
     image:
-      "https://images.unsplash.com/photo-1625527575307-616f0bb84ad2?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1590857935814-1e2fcf6dfbc6?q=80&w=2940&auto=format&fit=crop",
   },
   {
     name: "Visaka Sheets",
@@ -45,7 +45,7 @@ const brands = [
       "Multiple color options",
     ],
     image:
-      "https://images.unsplash.com/photo-1632778506495-44d045f0e428?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1604782206219-3b9576575203?q=80&w=2940&auto=format&fit=crop",
   },
   {
     name: "Tata Sheets",
@@ -59,7 +59,7 @@ const brands = [
       "Easy installation",
     ],
     image:
-      "https://images.unsplash.com/photo-1632778506495-44d045f0e428?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1628624747186-a5cf8d879f04?q=80&w=2940&auto=format&fit=crop",
   },
   {
     name: "Tata Structura",
@@ -73,7 +73,7 @@ const brands = [
       "Superior finish",
     ],
     image:
-      "https://images.unsplash.com/photo-1565118531796-763e5082d113?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=2940&auto=format&fit=crop",
   },
   {
     name: "Asian Paints",
@@ -87,7 +87,7 @@ const brands = [
       "Eco-friendly options",
     ],
     image:
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2940&auto=format&fit=crop",
   },
 ];
 
