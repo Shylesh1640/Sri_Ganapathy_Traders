@@ -92,32 +92,32 @@ export default function Home() {
     {
       name: "Cement",
       brand: "Dalmia",
-      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=400&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=400&auto=format&fit=crop"
     },
     {
       name: "TMT Bars",
       brand: "Tata Tiscon",
-      image: "https://images.unsplash.com/photo-1590857935814-1e2fcf6dfbc6?q=80&w=400&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1625527575307-616f0bb84ad2?q=80&w=400&auto=format&fit=crop"
     },
     {
       name: "Roofing Sheets",
       brand: "Visaka & Tata",
-      image: "https://images.unsplash.com/photo-1604782206219-3b9576575203?q=80&w=400&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1628624747186-a5cf8d879f04?q=80&w=400&auto=format&fit=crop"
     },
     {
       name: "Structural Steel",
       brand: "Tata Structura",
-      image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=400&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1565118531796-763e5082d113?q=80&w=400&auto=format&fit=crop"
     },
     {
       name: "Paints",
       brand: "Asian Paints",
-      image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=400&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=400&auto=format&fit=crop"
     },
     {
       name: "Construction Hardware",
       brand: "Premium Quality",
-      image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=400&auto=format&fit=crop"
     },
   ];
 
@@ -302,22 +302,22 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <div className="relative h-36 sm:h-48 rounded-lg overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2940&auto=format&fit=crop"
-                    alt="Construction Building Under Development"
+                    src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=2940&auto=format&fit=crop"
+                    alt="Cement bags for construction"
                     className="w-full h-full object-cover parallax-image"
                   />
                 </div>
                 <div className="relative h-36 sm:h-48 rounded-lg overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2940&auto=format&fit=crop"
-                    alt="Cement Bags and Building Materials"
+                    src="https://images.unsplash.com/photo-1625527575307-616f0bb84ad2?q=80&w=2940&auto=format&fit=crop"
+                    alt="TMT steel bars and reinforcement"
                     className="w-full h-full object-cover parallax-image"
                   />
                 </div>
                 <div className="relative h-36 sm:h-48 rounded-lg overflow-hidden col-span-2">
                   <img
-                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2940&auto=format&fit=crop"
-                    alt="Construction Materials Warehouse and Storage"
+                    src="https://images.unsplash.com/photo-1628624747186-a5cf8d879f04?q=80&w=2940&auto=format&fit=crop"
+                    alt="Roofing sheets and materials"
                     className="w-full h-full object-cover parallax-image"
                   />
                 </div>
