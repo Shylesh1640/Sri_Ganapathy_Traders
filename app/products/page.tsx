@@ -11,7 +11,7 @@ const products = [
     description:
       "Premium Portland Pozzolana Cement (PPC) and Ordinary Portland Cement (OPC) for all construction needs. High compressive strength, low heat of hydration, and superior durability. Ideal for plastering, concrete work, foundations, columns, beams, and all RCC structures.",
     image:
-      "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2940&auto=format&fit=crop",
     category: "Binding Material",
   },
   {
@@ -20,7 +20,7 @@ const products = [
     description:
       "Thermo-Mechanically Treated (TMT) reinforcement steel bars with superior earthquake resistance. Available in Fe 500, Fe 500D, and Fe 550 grades. Excellent ductility, bendability, and corrosion resistance. Perfect for residential, commercial, and infrastructure projects.",
     image:
-      "https://images.unsplash.com/photo-1625527575307-616f0bb84ad2?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1590857935814-1e2fcf6dfbc6?q=80&w=2940&auto=format&fit=crop",
     category: "Reinforcement Steel",
   },
   {
@@ -29,7 +29,7 @@ const products = [
     description:
       "Fiber cement and pre-painted steel roofing sheets with exceptional weather resistance. Available in corrugated, tile profile, and industrial profiles. Multiple colors and gauges. Suitable for homes, factories, warehouses, and agricultural structures.",
     image:
-      "https://images.unsplash.com/photo-1632778506495-44d045f0e428?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1604782206219-3b9576575203?q=80&w=2940&auto=format&fit=crop",
     category: "Roofing Solutions",
   },
   {
@@ -38,7 +38,7 @@ const products = [
     description:
       "Complete range of structural steel products: I-beams (ISMB, ISJB, ISLB), channels (ISMC, ISJC), angles, columns, and plates. High tensile strength, dimensional accuracy, and superior finish. Essential for multi-storey buildings, industrial sheds, and bridges.",
     image:
-      "https://images.unsplash.com/photo-1565118531796-763e5082d113?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=2940&auto=format&fit=crop",
     category: "Structural Materials",
   },
   {
@@ -47,7 +47,7 @@ const products = [
     description:
       "Comprehensive range of interior emulsions, exterior weather-proof paints, wood finishes, primers, and putties. 1,600+ shades, low VOC eco-friendly options, superior coverage, and washability. Suitable for walls, ceilings, wood, and metal surfaces.",
     image:
-      "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2940&auto=format&fit=crop",
     category: "Finishing Materials",
   },
   {
@@ -56,7 +56,7 @@ const products = [
     description:
       "Essential construction hardware including nails, screws, bolts, hinges, door fittings, hand tools, power tools, safety equipment, measuring instruments, and building accessories. Everything needed for complete construction and finishing work.",
     image:
-      "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=2940&auto=format&fit=crop",
     category: "Hardware & Accessories",
   },
 ];
@@ -156,16 +156,24 @@ export default function ProductsPage() {
             <div className="relative h-80 rounded-lg overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2940&auto=format&fit=crop"
-                alt="Quality cement bags"
+                alt="Cement bags stacked in warehouse"
                 className="w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent"></div>
+              <div className="absolute bottom-4 left-4 text-white font-barlow font-bold text-2xl">
+                Quality Cement
+              </div>
             </div>
             <div className="relative h-80 rounded-lg overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1590857935814-1e2fcf6dfbc6?q=80&w=2940&auto=format&fit=crop"
-                alt="Steel reinforcement materials"
+                alt="TMT steel bars and reinforcement"
                 className="w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent"></div>
+              <div className="absolute bottom-4 left-4 text-white font-barlow font-bold text-2xl">
+                TMT Steel Bars
+              </div>
             </div>
           </motion.div>
 

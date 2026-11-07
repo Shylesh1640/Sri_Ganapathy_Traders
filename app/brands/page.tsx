@@ -17,7 +17,7 @@ const brands = [
       "Eco-friendly and sustainable production",
     ],
     image:
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2940&auto=format&fit=crop",
   },
   {
     name: "Tata Tiscon",
@@ -59,7 +59,7 @@ const brands = [
       "Wide color palette and profiles",
     ],
     image:
-      "https://images.unsplash.com/photo-1628624747186-a5cf8d879f04?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1604782206219-3b9576575203?q=80&w=2940&auto=format&fit=crop",
   },
   {
     name: "Tata Structura",
@@ -87,7 +87,7 @@ const brands = [
       "Weather-resistant exterior finishes",
     ],
     image:
-      "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2940&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2940&auto=format&fit=crop",
   },
 ];
 
