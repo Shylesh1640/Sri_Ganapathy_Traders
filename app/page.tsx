@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import gsap from "gsap";
@@ -20,11 +20,32 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Hero carousel images
+  const heroImages = [
+    "/assets/images/home/img1.jpg",
+    "/assets/images/home/img2.jpg",
+    "/assets/images/home/img3.jpg",
+    "/assets/images/home/img4.jpg",
+    "/assets/images/home/img5.jpg",
+  ];
+
+  // Auto-rotate carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Hero background animation
-      gsap.to(".hero-bg", {
+      gsap.to(".hero-bg-active", {
         scale: 1.1,
         duration: 20,
         ease: "none",
@@ -148,15 +169,37 @@ export default function Home() {
     <div ref={heroRef}>
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background */}
-        <div
-          className="hero-bg absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('/assets/images/cement-bags.jpg')",
-          }}
-        >
-          <div className="absolute inset-0 hero-gradient"></div>
+        {/* Carousel Background */}
+        <div className="absolute inset-0">
+          {heroImages.map((image, index) => (
+            <div
+              key={image}
+              className={`hero-bg-active absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+                index === currentImageIndex ? "opacity-100" : "opacity-0"
+              }`}
+              style={{
+                backgroundImage: `url('${image}')`,
+              }}
+            >
+              <div className="absolute inset-0 hero-gradient"></div>
+            </div>
+          ))}
+        </div>
+
+        {/* Carousel Indicators */}
+        <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentImageIndex
+                  ? "bg-orange w-8"
+                  : "bg-white/50 hover:bg-white/80"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
 
         {/* Content */}
