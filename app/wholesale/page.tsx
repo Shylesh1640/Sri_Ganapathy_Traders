@@ -50,32 +50,32 @@ export default function WholesalePage() {
   const categories = [
     {
       name: "Cement (Dalmia)",
-      image: "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=400&auto=format&fit=crop",
+      image: "/assets/images/cement-bags.jpg",
       description: "Bulk PPC and OPC cement supply - bags or tonnage. Competitive rates for construction projects, contractors, and builders.",
     },
     {
       name: "TMT Steel Bars (Tata Tiscon)",
-      image: "https://images.unsplash.com/photo-1625527575307-616f0bb84ad2?q=80&w=400&auto=format&fit=crop",
+      image: "/assets/images/tmt-steel-bars.jpg",
       description: "Wholesale TMT bars in all diameters (8mm-32mm) and grades (Fe 500, Fe 500D, Fe 550). Tonnage discounts available.",
     },
     {
       name: "Roofing Sheets (Visaka & Tata BlueScope)",
-      image: "https://images.unsplash.com/photo-1628624747186-a5cf8d879f04?q=80&w=400&auto=format&fit=crop",
+      image: "/assets/images/roofing-sheets.jpg",
       description: "Bulk fiber cement and pre-painted steel roofing sheets. Multiple profiles and colors for large-scale projects.",
     },
     {
       name: "Structural Steel (Tata Structura)",
-      image: "https://images.unsplash.com/photo-1565118531796-763e5082d113?q=80&w=400&auto=format&fit=crop",
+      image: "/assets/images/structural-steel.jpg",
       description: "Wholesale structural steel sections - beams, channels, angles, columns. Tonnage supply for industrial and infrastructure projects.",
     },
     {
       name: "Paints (Asian Paints)",
-      image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=400&auto=format&fit=crop",
+      image: "/assets/images/paint-cans.jpg",
       description: "Bulk paint supply for contractors and large projects. Interior, exterior, primers, putties - all products at wholesale rates.",
     },
     {
       name: "Construction Hardware & Tools",
-      image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=400&auto=format&fit=crop",
+      image: "/assets/images/construction-tools.jpg",
       description: "Bulk hardware supplies - nails, screws, tools, safety equipment. One-stop solution for all construction accessories.",
     },
   ];
@@ -222,7 +222,7 @@ export default function WholesalePage() {
           >
             <div className="relative h-64 rounded-lg overflow-hidden group">
               <img
-                src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=2940&auto=format&fit=crop"
+                src="/assets/images/cement-bags.jpg"
                 alt="Bulk cement bags supply"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -233,7 +233,7 @@ export default function WholesalePage() {
             </div>
             <div className="relative h-64 rounded-lg overflow-hidden group">
               <img
-                src="https://images.unsplash.com/photo-1625527575307-616f0bb84ad2?q=80&w=2940&auto=format&fit=crop"
+                src="/assets/images/tmt-steel-bars.jpg"
                 alt="Wholesale TMT steel bars"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -244,7 +244,7 @@ export default function WholesalePage() {
             </div>
             <div className="relative h-64 rounded-lg overflow-hidden group">
               <img
-                src="https://images.unsplash.com/photo-1628624747186-a5cf8d879f04?q=80&w=2940&auto=format&fit=crop"
+                src="/assets/images/roofing-sheets.jpg"
                 alt="Roofing sheets for projects"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />

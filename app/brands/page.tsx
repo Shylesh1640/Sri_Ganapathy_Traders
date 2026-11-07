@@ -17,7 +17,7 @@ const brands = [
       "Eco-friendly and sustainable production",
     ],
     image:
-      "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=2940&auto=format&fit=crop",
+      "/assets/images/cement-bags.jpg",
   },
   {
     name: "Tata Tiscon",
@@ -31,7 +31,7 @@ const brands = [
       "Enhanced weldability without strength loss",
     ],
     image:
-      "https://images.unsplash.com/photo-1625527575307-616f0bb84ad2?q=80&w=2940&auto=format&fit=crop",
+      "/assets/images/tmt-steel-bars.jpg",
   },
   {
     name: "Visaka Industries",
@@ -45,7 +45,7 @@ const brands = [
       "Wide range of colors and profiles",
     ],
     image:
-      "https://images.unsplash.com/photo-1628624747186-a5cf8d879f04?q=80&w=2940&auto=format&fit=crop",
+      "/assets/images/roofing-sheets.jpg",
   },
   {
     name: "Tata BlueScope Steel",
@@ -59,7 +59,7 @@ const brands = [
       "Wide color palette and profiles",
     ],
     image:
-      "https://images.unsplash.com/photo-1628624747186-a5cf8d879f04?q=80&w=2940&auto=format&fit=crop",
+      "/assets/images/roofing-sheets.jpg",
   },
   {
     name: "Tata Structura",
@@ -73,7 +73,7 @@ const brands = [
       "Superior surface finish and straightness",
     ],
     image:
-      "https://images.unsplash.com/photo-1565118531796-763e5082d113?q=80&w=2940&auto=format&fit=crop",
+      "/assets/images/structural-steel.jpg",
   },
   {
     name: "Asian Paints",
@@ -87,7 +87,7 @@ const brands = [
       "Weather-resistant exterior finishes",
     ],
     image:
-      "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2940&auto=format&fit=crop",
+      "/assets/images/paint-cans.jpg",
   },
 ];
 

@@ -92,32 +92,32 @@ export default function Home() {
     {
       name: "Cement",
       brand: "Dalmia",
-      image: "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=400&auto=format&fit=crop"
+      image: "/assets/images/cement-bags.jpg"
     },
     {
       name: "TMT Bars",
       brand: "Tata Tiscon",
-      image: "https://images.unsplash.com/photo-1625527575307-616f0bb84ad2?q=80&w=400&auto=format&fit=crop"
+      image: "/assets/images/tmt-steel-bars.jpg"
     },
     {
       name: "Roofing Sheets",
       brand: "Visaka & Tata",
-      image: "https://images.unsplash.com/photo-1628624747186-a5cf8d879f04?q=80&w=400&auto=format&fit=crop"
+      image: "/assets/images/roofing-sheets.jpg"
     },
     {
       name: "Structural Steel",
       brand: "Tata Structura",
-      image: "https://images.unsplash.com/photo-1565118531796-763e5082d113?q=80&w=400&auto=format&fit=crop"
+      image: "/assets/images/structural-steel.jpg"
     },
     {
       name: "Paints",
       brand: "Asian Paints",
-      image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=400&auto=format&fit=crop"
+      image: "/assets/images/paint-cans.jpg"
     },
     {
       name: "Construction Hardware",
       brand: "Premium Quality",
-      image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=400&auto=format&fit=crop"
+      image: "/assets/images/construction-tools.jpg"
     },
   ];
 
@@ -153,7 +153,7 @@ export default function Home() {
           className="hero-bg absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=2940&auto=format&fit=crop')",
+              "url('/assets/images/cement-bags.jpg')",
           }}
         >
           <div className="absolute inset-0 hero-gradient"></div>
@@ -302,21 +302,21 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <div className="relative h-36 sm:h-48 rounded-lg overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=2940&auto=format&fit=crop"
+                    src="/assets/images/cement-bags.jpg"
                     alt="Cement bags for construction"
                     className="w-full h-full object-cover parallax-image"
                   />
                 </div>
                 <div className="relative h-36 sm:h-48 rounded-lg overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1625527575307-616f0bb84ad2?q=80&w=2940&auto=format&fit=crop"
+                    src="/assets/images/tmt-steel-bars.jpg"
                     alt="TMT steel bars and reinforcement"
                     className="w-full h-full object-cover parallax-image"
                   />
                 </div>
                 <div className="relative h-36 sm:h-48 rounded-lg overflow-hidden col-span-2">
                   <img
-                    src="https://images.unsplash.com/photo-1628624747186-a5cf8d879f04?q=80&w=2940&auto=format&fit=crop"
+                    src="/assets/images/roofing-sheets.jpg"
                     alt="Roofing sheets and materials"
                     className="w-full h-full object-cover parallax-image"
                   />

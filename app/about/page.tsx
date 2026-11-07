@@ -110,21 +110,21 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative h-48 rounded-lg overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=2940&auto=format&fit=crop"
+                    src="/assets/images/cement-bags.jpg"
                     alt="Dalmia cement bags"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="relative h-48 rounded-lg overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1625527575307-616f0bb84ad2?q=80&w=2940&auto=format&fit=crop"
+                    src="/assets/images/tmt-steel-bars.jpg"
                     alt="TMT steel reinforcement bars"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="relative h-48 rounded-lg overflow-hidden col-span-2">
                   <img
-                    src="https://images.unsplash.com/photo-1628624747186-a5cf8d879f04?q=80&w=2940&auto=format&fit=crop"
+                    src="/assets/images/roofing-sheets.jpg"
                     alt="Roofing sheets"
                     className="w-full h-full object-cover"
                   />
@@ -209,21 +209,21 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative h-52 rounded-lg overflow-hidden col-span-2">
                   <img
-                    src="https://images.unsplash.com/photo-1565118531796-763e5082d113?q=80&w=2940&auto=format&fit=crop"
+                    src="/assets/images/structural-steel.jpg"
                     alt="Structural steel beams"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="relative h-44 rounded-lg overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2940&auto=format&fit=crop"
+                    src="/assets/images/paint-cans.jpg"
                     alt="Asian Paints paint cans"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="relative h-44 rounded-lg overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=2940&auto=format&fit=crop"
+                    src="/assets/images/construction-tools.jpg"
                     alt="Construction hardware and tools"
                     className="w-full h-full object-cover"
                   />
