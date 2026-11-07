@@ -95,8 +95,9 @@ export default function WholesalePage() {
             </h1>
             <p className="text-concrete text-lg md:text-xl max-w-3xl mx-auto mb-8">
               Since 2008, serving 100,000+ customers with competitive bulk rates.
-              Quality materials from 20+ trusted brands at wholesale prices for
-              contractors, builders, and large projects.
+              Quality materials from trusted brands at wholesale prices for
+              contractors, builders, and large projects. Shipping available all over
+              Kanniyakumari District.
             </p>
             <a
               href="https://wa.me/919486579329?text=Hi%2C%20I%27m%20interested%20in%20wholesale%20enquiry.%20Please%20provide%20details."
@@ -219,26 +220,38 @@ export default function WholesalePage() {
             transition={{ duration: 0.8 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
           >
-            <div className="relative h-64 rounded-lg overflow-hidden">
+            <div className="relative h-64 rounded-lg overflow-hidden group">
               <img
                 src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?q=80&w=2940&auto=format&fit=crop"
-                alt="Construction materials delivery"
-                className="w-full h-full object-cover"
+                alt="Bulk construction materials supply"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent"></div>
+              <div className="absolute bottom-4 left-4 text-white font-barlow font-bold text-xl">
+                Bulk Supply
+              </div>
             </div>
-            <div className="relative h-64 rounded-lg overflow-hidden">
+            <div className="relative h-64 rounded-lg overflow-hidden group">
               <img
-                src="https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?q=80&w=2940&auto=format&fit=crop"
-                alt="Warehouse operations"
-                className="w-full h-full object-cover"
+                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2940&auto=format&fit=crop"
+                alt="Construction warehouse"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent"></div>
+              <div className="absolute bottom-4 left-4 text-white font-barlow font-bold text-xl">
+                Wholesale Rates
+              </div>
             </div>
-            <div className="relative h-64 rounded-lg overflow-hidden">
+            <div className="relative h-64 rounded-lg overflow-hidden group">
               <img
-                src="https://images.unsplash.com/photo-1597266924224-14c3dc479af6?q=80&w=2940&auto=format&fit=crop"
-                alt="Building project"
-                className="w-full h-full object-cover"
+                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2940&auto=format&fit=crop"
+                alt="Construction project delivery"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent"></div>
+              <div className="absolute bottom-4 left-4 text-white font-barlow font-bold text-xl">
+                Project Support
+              </div>
             </div>
           </motion.div>
 

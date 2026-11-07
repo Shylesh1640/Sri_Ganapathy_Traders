@@ -103,11 +103,12 @@ export default function BrandsPage() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="font-barlow font-black text-6xl md:text-7xl text-white mb-6">
-              20+ Trusted <span className="text-gradient">Brands</span>
+              Trusted <span className="text-gradient">Brands</span>
             </h1>
             <p className="text-concrete text-lg md:text-xl max-w-3xl mx-auto">
               Since 2008, we've partnered with India's most reliable manufacturers
               to bring you authentic, premium-quality construction materials.
+              Shipping available all over Kanniyakumari District.
             </p>
           </motion.div>
         </div>
@@ -212,60 +213,8 @@ export default function BrandsPage() {
         </div>
       </section>
 
-      {/* Additional Brands Grid */}
-      <section className="section-padding bg-charcoal">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="font-barlow font-bold text-4xl md:text-5xl text-white mb-4">
-              More Premium Brands
-            </h2>
-            <p className="text-concrete text-lg">
-              Complete range from trusted manufacturers
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {[
-              "Birla Cement",
-              "JSW Steel",
-              "Kamdhenu TMT",
-              "Everest Industries",
-              "Berger Paints",
-              "Nerolac Paints",
-              "Hettich Hardware",
-              "Saint-Gobain",
-              "Shree Cement",
-              "Hindware",
-              "Kajaria Tiles",
-              "Somany Ceramics",
-              "Greenply",
-              "Century Plyboards",
-            ].map((brand, index) => (
-              <motion.div
-                key={brand}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="bg-navy/30 backdrop-blur-sm border border-concrete/20 rounded-lg p-6 text-center hover:border-orange/30 hover:bg-navy/40 transition-all duration-300 min-h-[120px] flex items-center justify-center"
-              >
-                <div className="font-barlow font-bold text-white text-lg">
-                  {brand}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="section-padding bg-navy/30">
+      <section className="section-padding bg-charcoal">
         <div className="container-custom">
           <div className="bg-gradient-to-r from-orange to-orange/80 rounded-2xl p-12 text-center">
             <motion.div

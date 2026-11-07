@@ -9,11 +9,11 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center p-2">
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center p-2 shadow-lg">
                 <img
                   src="/logo.png"
                   alt="Sri Ganapathy Traders Logo"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain rounded-full"
                 />
               </div>
               <div>
@@ -25,7 +25,8 @@ export default function Footer() {
             </div>
             <p className="text-concrete text-sm leading-relaxed">
               Since 2008, serving 100K+ customers with wholesale & retail
-              construction supplies from 20+ trusted brands.
+              construction supplies from 20+ trusted brands. Shipping available
+              all over Kanniyakumari District.
             </p>
           </div>
 

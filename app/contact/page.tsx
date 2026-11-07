@@ -329,7 +329,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Service Area Section */}
       <section className="section-padding bg-navy/30">
         <div className="container-custom">
           <motion.div
@@ -337,33 +337,35 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            className="bg-gradient-to-r from-orange to-orange/80 rounded-2xl p-12 text-center"
           >
-            <h2 className="font-barlow font-bold text-5xl md:text-6xl text-white mb-4">
-              Find Us
+            <h2 className="font-barlow font-bold text-4xl md:text-5xl text-white mb-6">
+              We Deliver Across Kanniyakumari
             </h2>
-            <p className="text-concrete text-lg">
-              Visit our showroom in Nagercoil
+            <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+              Shipping available all over Kanniyakumari District for your convenience.
+              Quality construction materials delivered to your doorstep.
             </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="rounded-lg overflow-hidden"
-          >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126354.02832779476!2d77.35051799726562!3d8.179212200000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b04f0d8f9e1be3f%3A0x8b3f9e9f9e9f9e9f!2sNagercoil%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1234567890"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="grayscale"
-            ></iframe>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="https://maps.app.goo.gl/65LzcvXVvUZ6Gze46"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 bg-white text-orange font-semibold px-8 py-4 rounded-md transition-all duration-300 hover:scale-105"
+              >
+                <MapPin size={20} />
+                <span>View Our Location on Maps</span>
+              </a>
+              <a
+                href="https://wa.me/919486579329"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 bg-charcoal text-white font-semibold px-8 py-4 rounded-md transition-all duration-300 hover:scale-105"
+              >
+                <MessageCircle size={20} />
+                <span>WhatsApp Us</span>
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>

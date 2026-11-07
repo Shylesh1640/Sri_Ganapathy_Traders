@@ -33,7 +33,7 @@ export default function AboutPage() {
   ];
 
   const stats = [
-    { number: "20+", label: "Premium Brands" },
+    { number: "24+", label: "Premium Brands" },
     { number: "100K+", label: "Happy Customers" },
     { number: "2008", label: "Established Since" },
     { number: "100%", label: "Authentic Products" },
@@ -86,16 +86,16 @@ export default function AboutPage() {
                 </p>
                 <p>
                   We specialize in supplying premium construction materials from
-                  more than 20 trusted brands, including Dalmia Cement, Tata
-                  Tiscon TMT Bars, Visaka and Tata Roofing Sheets, Tata Structura
-                  Steel, Asian Paints, and a comprehensive range of construction
-                  hardware.
+                  trusted brands, including Dalmia Cement, UltraTech, ACC, Tata
+                  Tiscon TMT Bars, JSW Steel, Visaka and Tata Roofing Sheets, Tata
+                  Structura Steel, Asian Paints, Berger Paints, and a comprehensive
+                  range of construction hardware.
                 </p>
                 <p>
                   Our commitment to quality, competitive pricing, and customer
                   satisfaction has made us a preferred choice for construction
-                  projects of all scales—from individual homes to large
-                  commercial developments.
+                  projects of all scales. We offer convenient shipping services
+                  all over Kanniyakumari District.
                 </p>
               </div>
             </motion.div>

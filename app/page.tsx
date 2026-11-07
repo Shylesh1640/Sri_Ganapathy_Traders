@@ -252,11 +252,11 @@ export default function Home() {
               <p className="text-concrete text-lg leading-relaxed mb-6">
                 Since 2008, Sri Ganapathy Traders has been serving over 100,000
                 satisfied customers as a leading wholesale and retail supplier
-                of construction materials in Nagercoil, across Kanniyakumari
-                District.
+                of construction materials in Nagercoil, with shipping available
+                all over Kanniyakumari District.
               </p>
               <p className="text-concrete text-lg leading-relaxed mb-8">
-                We provide premium quality materials from 20+ trusted brands
+                We provide premium quality materials from trusted brands
                 including cement, TMT bars, roofing sheets, structural steel,
                 paints, and construction hardware.
               </p>
@@ -331,42 +331,46 @@ export default function Home() {
         <div className="container-custom">
           <div className="animate-on-scroll text-center mb-16">
             <h2 className="font-barlow font-bold text-5xl md:text-6xl text-white mb-4">
-              20+ Trusted Brands
+              Trusted Brands
             </h2>
             <p className="text-concrete text-lg">
               We supply products from India's most reliable manufacturers
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[
               "Dalmia Cement",
+              "UltraTech Cement",
+              "ACC Cement",
               "Tata Tiscon",
-              "Visaka",
-              "Tata Sheets",
-              "Tata Structura",
-              "Asian Paints",
-              "Birla Cement",
               "JSW Steel",
               "Kamdhenu",
+              "SAIL",
+              "Visaka",
+              "Tata Sheets",
               "Everest Industries",
+              "Asian Paints",
               "Berger Paints",
-              "Nerolac",
+              "Nerolac Paints",
+              "Dulux Paints",
+              "Tata Structura",
+              "Jindal Steel",
               "Hettich",
+              "Hafele",
               "Saint-Gobain",
               "Shree Cement",
-              "Hindware",
+              "Ambuja Cement",
+              "Birla Cement",
               "Kajaria Tiles",
-              "Somany",
-              "Greenply",
-              "Century Plyboards",
+              "Somany Ceramics",
             ].map((brand, index) => (
               <motion.div
                 key={brand}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
+                transition={{ duration: 0.5, delay: index * 0.04 }}
                 className="bg-white/5 backdrop-blur-sm border border-concrete/20 rounded-lg p-6 flex items-center justify-center hover:bg-white/10 hover:border-orange/30 transition-all duration-300 min-h-[100px]"
               >
                 <div className="font-barlow font-bold text-white text-center text-sm">

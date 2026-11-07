@@ -143,9 +143,32 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Product Gallery */}
       <section className="section-padding bg-navy/30">
         <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12"
+          >
+            <div className="relative h-80 rounded-lg overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2940&auto=format&fit=crop"
+                alt="Quality cement bags"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative h-80 rounded-lg overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1590857935814-1e2fcf6dfbc6?q=80&w=2940&auto=format&fit=crop"
+                alt="Steel reinforcement materials"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
+
           <div className="bg-gradient-to-r from-orange to-orange/80 rounded-2xl p-12 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -158,7 +181,8 @@ export default function ProductsPage() {
               </h2>
               <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
                 We offer competitive wholesale rates for contractors, builders,
-                and large construction projects.
+                and large construction projects. Shipping available all over
+                Kanniyakumari District.
               </p>
               <a
                 href="/wholesale"
