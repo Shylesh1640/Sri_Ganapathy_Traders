@@ -9,25 +9,25 @@ const products = [
     name: "Cement",
     brand: "Dalmia Cement",
     description:
-      "Premium quality cement for strong and durable construction. Ideal for foundations, columns, beams, and all structural applications.",
+      "Premium Portland Pozzolana Cement (PPC) and Ordinary Portland Cement (OPC) for all construction needs. High compressive strength, low heat of hydration, and superior durability. Ideal for plastering, concrete work, foundations, columns, beams, and all RCC structures.",
     image:
       "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=2940&auto=format&fit=crop",
     category: "Binding Material",
   },
   {
-    name: "TMT Bars",
+    name: "TMT Steel Bars",
     brand: "Tata Tiscon",
     description:
-      "High-strength thermo-mechanically treated reinforcement steel bars. Superior ductility, weldability, and seismic resistance for safe construction.",
+      "Thermo-Mechanically Treated (TMT) reinforcement steel bars with superior earthquake resistance. Available in Fe 500, Fe 500D, and Fe 550 grades. Excellent ductility, bendability, and corrosion resistance. Perfect for residential, commercial, and infrastructure projects.",
     image:
       "https://images.unsplash.com/photo-1625527575307-616f0bb84ad2?q=80&w=2940&auto=format&fit=crop",
     category: "Reinforcement Steel",
   },
   {
     name: "Roofing Sheets",
-    brand: "Visaka & Tata Sheets",
+    brand: "Visaka Industries & Tata BlueScope Steel",
     description:
-      "Durable and weather-resistant roofing solutions. Available in multiple profiles and colors for residential and industrial applications.",
+      "Fiber cement and pre-painted steel roofing sheets with exceptional weather resistance. Available in corrugated, tile profile, and industrial profiles. Multiple colors and gauges. Suitable for homes, factories, warehouses, and agricultural structures.",
     image:
       "https://images.unsplash.com/photo-1632778506495-44d045f0e428?q=80&w=2940&auto=format&fit=crop",
     category: "Roofing Solutions",
@@ -36,25 +36,25 @@ const products = [
     name: "Structural Steel",
     brand: "Tata Structura",
     description:
-      "Premium structural steel sections including beams, channels, angles, and plates. Engineered for strength and reliability in construction projects.",
+      "Complete range of structural steel products: I-beams (ISMB, ISJB, ISLB), channels (ISMC, ISJC), angles, columns, and plates. High tensile strength, dimensional accuracy, and superior finish. Essential for multi-storey buildings, industrial sheds, and bridges.",
     image:
       "https://images.unsplash.com/photo-1565118531796-763e5082d113?q=80&w=2940&auto=format&fit=crop",
     category: "Structural Materials",
   },
   {
-    name: "Paints",
+    name: "Paints & Coatings",
     brand: "Asian Paints",
     description:
-      "Complete range of interior and exterior paints, primers, and finishes. Superior coverage, durability, and vibrant color options for all surfaces.",
+      "Comprehensive range of interior emulsions, exterior weather-proof paints, wood finishes, primers, and putties. 1,600+ shades, low VOC eco-friendly options, superior coverage, and washability. Suitable for walls, ceilings, wood, and metal surfaces.",
     image:
       "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2940&auto=format&fit=crop",
     category: "Finishing Materials",
   },
   {
     name: "Construction Hardware",
-    brand: "Premium Quality",
+    brand: "Quality Hardware & Tools",
     description:
-      "Essential construction hardware and accessories including fasteners, tools, safety equipment, and building materials for complete construction needs.",
+      "Essential construction hardware including nails, screws, bolts, hinges, door fittings, hand tools, power tools, safety equipment, measuring instruments, and building accessories. Everything needed for complete construction and finishing work.",
     image:
       "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=2940&auto=format&fit=crop",
     category: "Hardware & Accessories",

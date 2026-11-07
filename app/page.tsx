@@ -359,55 +359,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Brands */}
-      <section className="section-padding bg-charcoal">
-        <div className="container-custom">
-          <div className="animate-on-scroll text-center mb-16">
-            <h2 className="font-barlow font-bold text-5xl md:text-6xl text-white mb-4">
-              Trusted Brands
-            </h2>
-            <p className="text-concrete text-lg">
-              We supply products from India's most reliable manufacturers
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
-            {[
-              "Dalmia Cement",
-              "Tata Tiscon",
-              "Visaka",
-              "Tata Sheets",
-              "Tata Structura",
-              "Asian Paints",
-              "UltraTech",
-              "ACC",
-              "Birla",
-              "JSW Steel",
-              "Berger Paints",
-              "Nerolac",
-            ].map((brand, index) => (
-              <motion.div
-                key={brand}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.04 }}
-                className="bg-white/5 backdrop-blur-sm border border-concrete/20 rounded-lg p-4 sm:p-6 flex items-center justify-center hover:bg-white/10 hover:border-orange/30 transition-all duration-300 min-h-[80px] sm:min-h-[100px] stagger-item"
-              >
-                <div className="font-barlow font-bold text-white text-center text-sm">
-                  {brand}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/brands" className="btn-primary inline-block">
-              View All Brands
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-r from-orange to-orange/80">

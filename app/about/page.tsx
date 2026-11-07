@@ -86,9 +86,10 @@ export default function AboutPage() {
                 </p>
                 <p>
                   We specialize in supplying premium construction materials from
-                  trusted brands, including Dalmia Cement, Tata Tiscon TMT Bars,
-                  Visaka and Tata Roofing Sheets, Tata Structura Steel, Asian
-                  Paints, and a comprehensive range of construction hardware.
+                  trusted brands, including Dalmia Cement, Tata Tiscon TMT Steel
+                  Bars, Visaka Industries and Tata BlueScope Roofing Sheets, Tata
+                  Structura Structural Steel, Asian Paints, and a comprehensive
+                  range of construction hardware and tools.
                 </p>
                 <p>
                   Our commitment to quality, competitive pricing, and customer

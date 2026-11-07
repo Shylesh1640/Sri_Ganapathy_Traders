@@ -51,32 +51,32 @@ export default function WholesalePage() {
     {
       name: "Cement (Dalmia)",
       image: "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=400&auto=format&fit=crop",
-      description: "Bulk cement supply for large construction projects",
+      description: "Bulk PPC and OPC cement supply - bags or tonnage. Competitive rates for construction projects, contractors, and builders.",
     },
     {
-      name: "TMT Bars (Tata Tiscon)",
+      name: "TMT Steel Bars (Tata Tiscon)",
       image: "https://images.unsplash.com/photo-1625527575307-616f0bb84ad2?q=80&w=400&auto=format&fit=crop",
-      description: "Wholesale TMT reinforcement steel in all standard sizes",
+      description: "Wholesale TMT bars in all diameters (8mm-32mm) and grades (Fe 500, Fe 500D, Fe 550). Tonnage discounts available.",
     },
     {
-      name: "Roofing Sheets (Visaka & Tata)",
+      name: "Roofing Sheets (Visaka & Tata BlueScope)",
       image: "https://images.unsplash.com/photo-1632778506495-44d045f0e428?q=80&w=400&auto=format&fit=crop",
-      description: "Bulk roofing solutions for residential and industrial projects",
+      description: "Bulk fiber cement and pre-painted steel roofing sheets. Multiple profiles and colors for large-scale projects.",
     },
     {
       name: "Structural Steel (Tata Structura)",
       image: "https://images.unsplash.com/photo-1565118531796-763e5082d113?q=80&w=400&auto=format&fit=crop",
-      description: "Complete structural steel requirements for your projects",
+      description: "Wholesale structural steel sections - beams, channels, angles, columns. Tonnage supply for industrial and infrastructure projects.",
     },
     {
       name: "Paints (Asian Paints)",
       image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=400&auto=format&fit=crop",
-      description: "Wholesale supply of paints and finishes for large projects",
+      description: "Bulk paint supply for contractors and large projects. Interior, exterior, primers, putties - all products at wholesale rates.",
     },
     {
-      name: "Construction Hardware",
+      name: "Construction Hardware & Tools",
       image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=400&auto=format&fit=crop",
-      description: "Bulk supply of essential construction hardware and accessories",
+      description: "Bulk hardware supplies - nails, screws, tools, safety equipment. One-stop solution for all construction accessories.",
     },
   ];
 

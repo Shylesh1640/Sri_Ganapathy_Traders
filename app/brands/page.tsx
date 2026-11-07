@@ -9,54 +9,54 @@ const brands = [
     name: "Dalmia Cement",
     category: "Cement",
     description:
-      "One of India's leading cement manufacturers, known for premium quality and sustainability. Dalmia Cement offers superior strength and durability for all construction applications.",
+      "Dalmia Cement is one of India's leading cement manufacturers with a legacy of quality and sustainability. Known for producing premium Portland Pozzolana Cement (PPC) and Ordinary Portland Cement (OPC) with superior strength characteristics. Trusted by builders and contractors for residential, commercial, and infrastructure projects across India.",
     features: [
-      "High compressive strength",
-      "Low heat of hydration",
-      "Eco-friendly manufacturing",
-      "Consistent quality",
+      "High compressive strength - exceeds IS standards",
+      "Low heat of hydration - prevents cracks",
+      "Superior durability and longevity",
+      "Eco-friendly and sustainable production",
     ],
     image:
       "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2940&auto=format&fit=crop",
   },
   {
     name: "Tata Tiscon",
-    category: "TMT Bars",
+    category: "TMT Steel Bars",
     description:
-      "India's most trusted TMT bar brand from the Tata Steel family. Engineered for superior strength, ductility, and seismic resistance in modern construction projects.",
+      "Tata Tiscon is India's most trusted brand of Thermo-Mechanically Treated (TMT) reinforcement steel bars from Tata Steel. Manufactured using advanced technology, Tiscon bars offer exceptional strength, ductility, and earthquake resistance. Ideal for all RCC structures including residential buildings, commercial complexes, bridges, and infrastructure projects.",
     features: [
-      "Superior seismic resistance",
-      "High ductility and bendability",
-      "Corrosion resistant",
-      "Excellent weldability",
+      "Superior earthquake resistance",
+      "High elongation and bendability",
+      "Excellent corrosion resistance",
+      "Enhanced weldability without strength loss",
     ],
     image:
       "https://images.unsplash.com/photo-1590857935814-1e2fcf6dfbc6?q=80&w=2940&auto=format&fit=crop",
   },
   {
-    name: "Visaka Sheets",
+    name: "Visaka Industries",
     category: "Roofing Solutions",
     description:
-      "Premium roofing sheets with exceptional weather resistance and durability. Visaka offers a wide range of profiles and colors for residential and industrial applications.",
+      "Visaka Industries Limited is a pioneer in fiber cement roofing sheets in India. Their roofing products offer exceptional weather resistance, durability, and fire safety. Available in various profiles including corrugated, tile profile, and industrial sheets. Suitable for residential homes, factories, warehouses, and agricultural structures across diverse climatic conditions.",
     features: [
-      "Weather resistant",
-      "UV protection",
-      "Long-lasting durability",
-      "Multiple color options",
+      "Weather and UV resistant",
+      "Fire retardant properties - Class 1",
+      "Long service life - 25+ years",
+      "Wide range of colors and profiles",
     ],
     image:
       "https://images.unsplash.com/photo-1604782206219-3b9576575203?q=80&w=2940&auto=format&fit=crop",
   },
   {
-    name: "Tata Sheets",
-    category: "Roofing Solutions",
+    name: "Tata BlueScope Steel",
+    category: "Roofing & Cladding",
     description:
-      "High-quality roofing sheets from Tata Steel, engineered for strength and longevity. Superior finish and corrosion resistance for reliable roofing solutions.",
+      "Tata BlueScope Steel is a joint venture between Tata Steel and BlueScope Steel (Australia), producing premium pre-painted steel roofing and wall cladding solutions. Their COLORBOND® and ZINCALUME® steel products offer superior corrosion resistance and aesthetic appeal. Widely used in industrial buildings, commercial structures, and modern residential roofing applications.",
     features: [
-      "Corrosion resistant coating",
-      "High tensile strength",
-      "Premium finish",
-      "Easy installation",
+      "Advanced corrosion protection",
+      "High tensile strength and durability",
+      "Premium factory-applied finish",
+      "Wide color palette and profiles",
     ],
     image:
       "https://images.unsplash.com/photo-1628624747186-a5cf8d879f04?q=80&w=2940&auto=format&fit=crop",
@@ -65,26 +65,26 @@ const brands = [
     name: "Tata Structura",
     category: "Structural Steel",
     description:
-      "Premium structural steel products from Tata Steel. Engineered steel sections for robust and reliable construction with consistent quality and performance.",
+      "Tata Structura represents Tata Steel's comprehensive range of structural steel products including I-beams, channels, angles, columns, and plates. Manufactured to international quality standards, these products offer consistent mechanical properties and dimensional accuracy. Essential for constructing multi-storey buildings, industrial sheds, bridges, and heavy engineering structures.",
     features: [
-      "High structural integrity",
-      "Consistent quality",
-      "Multiple section types",
-      "Superior finish",
+      "High structural integrity and load-bearing capacity",
+      "Consistent quality as per IS 2062 standards",
+      "Complete range of sections and sizes",
+      "Superior surface finish and straightness",
     ],
     image:
       "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=2940&auto=format&fit=crop",
   },
   {
     name: "Asian Paints",
-    category: "Paints & Finishes",
+    category: "Paints & Coatings",
     description:
-      "Asia's largest paint company, offering a complete range of decorative and protective coatings. Superior coverage, durability, and vibrant colors for all surfaces.",
+      "Asian Paints is Asia's largest and India's most trusted paint company with a presence across 15 countries. Offering a comprehensive range of interior and exterior paints, wood finishes, protective coatings, and ancillary products. Known for innovative color solutions, superior coverage, durability, and eco-friendly formulations. Trusted by millions of homeowners and professional painters.",
     features: [
-      "Wide color range",
-      "Superior coverage",
-      "Long-lasting finish",
-      "Eco-friendly options",
+      "Widest range of 1,600+ shades",
+      "Superior coverage and washability",
+      "Low VOC and eco-friendly options",
+      "Weather-resistant exterior finishes",
     ],
     image:
       "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2940&auto=format&fit=crop",
@@ -114,10 +114,51 @@ export default function BrandsPage() {
         </div>
       </section>
 
-      {/* Why Branded Products */}
+      {/* Brand Logos Grid */}
       <section className="section-padding bg-charcoal">
         <div className="container-custom">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-barlow font-bold text-4xl md:text-5xl text-white mb-4">
+              Our Brand Partners
+            </h2>
+            <p className="text-concrete text-lg">
+              Authentic products from trusted manufacturers
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 mb-16">
+            {[
+              { name: "Dalmia Cement", logo: "/assets/brands/Dalmia.jpg" },
+              { name: "Tata Tiscon", logo: "/assets/brands/Tata_Tiscon.jpg" },
+              { name: "Visaka Industries", logo: "/assets/brands/visaka.png" },
+              { name: "Tata BlueScope Steel", logo: "/assets/brands/Tata_Shaktee.jpg" },
+              { name: "Tata Structura", logo: "/assets/brands/Tata_Structura.jpg" },
+              { name: "Asian Paints", logo: "/assets/brands/Asian_paints.jpg" },
+            ].map((brand, index) => (
+              <motion.div
+                key={brand.name}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-lg p-4 sm:p-6 flex items-center justify-center hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                <img
+                  src={brand.logo}
+                  alt={brand.name}
+                  className="w-full h-auto max-h-20 object-contain"
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {[
               {
                 icon: <Shield className="w-10 h-10" />,
