@@ -21,7 +21,7 @@ html {
 
 body {
   font-family: var(--font-dmsans);
-  background-color: #111820;
+  background-color: #0F1419;
   color: #ffffff;
   overflow-x: hidden;
 }
@@ -37,7 +37,7 @@ body {
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, rgba(17, 24, 32, 0.95) 0%, rgba(23, 59, 89, 0.85) 100%);
+  background: linear-gradient(135deg, rgba(15, 20, 25, 0.95) 0%, rgba(0, 61, 91, 0.90) 100%);
 }
 
 .text-gradient {

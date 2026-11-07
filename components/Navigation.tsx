@@ -38,15 +38,19 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20 px-4 md:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 bg-orange rounded-md flex items-center justify-center font-barlow font-bold text-2xl transition-transform duration-300 group-hover:scale-110">
-              ST
+            <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 p-1">
+              <img
+                src="/logo.png"
+                alt="Sri Ganapathy Traders Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
             <div className="hidden md:block">
               <div className="font-barlow font-bold text-xl text-white">
                 SRI GANAPATHY TRADERS
               </div>
               <div className="text-xs text-concrete">
-                Construction Supplies
+                Construction Supplies Since 2008
               </div>
             </div>
           </Link>

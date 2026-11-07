@@ -9,10 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        charcoal: "#111820",
-        navy: "#173B59",
+        charcoal: "#0F1419",
+        navy: "#003D5B",
+        navyDark: "#002A3F",
         orange: "#F47721",
+        orangeLight: "#FF8C42",
         concrete: "#AAB3BB",
+        white: "#FFFFFF",
       },
       fontFamily: {
         barlow: ["var(--font-barlow)", "sans-serif"],

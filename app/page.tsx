@@ -190,7 +190,7 @@ export default function Home() {
       </section>
 
       {/* Products Grid */}
-      <section className="section-padding bg-navy/30">
+      <section className="section-padding bg-navy/20">
         <div className="container-custom">
           <div className="animate-on-scroll text-center mb-16">
             <h2 className="font-barlow font-bold text-5xl md:text-6xl text-white mb-4">
@@ -295,7 +295,7 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section className="section-padding bg-navy/30">
+      <section className="section-padding bg-navy/20">
         <div className="container-custom">
           <div className="animate-on-scroll text-center mb-16">
             <h2 className="font-barlow font-bold text-5xl md:text-6xl text-white mb-4">

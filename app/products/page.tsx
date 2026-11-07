@@ -74,7 +74,7 @@ export default function ProductsPage() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-navy to-charcoal">
+      <section className="section-padding bg-gradient-to-br from-navy via-navyDark to-charcoal">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
