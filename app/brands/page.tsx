@@ -117,7 +117,7 @@ export default function BrandsPage() {
       {/* Why Branded Products */}
       <section className="section-padding bg-charcoal">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-16">
             {[
               {
                 icon: <Shield className="w-10 h-10" />,

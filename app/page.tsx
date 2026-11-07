@@ -32,7 +32,7 @@ export default function Home() {
         yoyo: true,
       });
 
-      // Scroll animations
+      // Scroll animations for sections
       gsap.utils.toArray(".animate-on-scroll").forEach((element: any) => {
         gsap.fromTo(
           element,
@@ -49,6 +49,39 @@ export default function Home() {
             },
           }
         );
+      });
+
+      // Stagger animation for cards
+      gsap.utils.toArray(".stagger-item").forEach((element: any, index) => {
+        gsap.fromTo(
+          element,
+          { opacity: 0, y: 30, scale: 0.95 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.6,
+            delay: index * 0.1,
+            scrollTrigger: {
+              trigger: element,
+              start: "top 85%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      });
+
+      // Parallax effect for images
+      gsap.utils.toArray(".parallax-image").forEach((element: any) => {
+        gsap.to(element, {
+          y: -50,
+          scrollTrigger: {
+            trigger: element,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+          },
+        });
       });
     }, heroRef);
 
@@ -133,7 +166,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <h1 className="font-barlow font-black text-6xl md:text-8xl lg:text-9xl text-white leading-tight mb-6">
+            <h1 className="font-barlow font-black text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-white leading-tight mb-6">
               BUILD STRONG.<br />
               BUILD WITH{" "}
               <span className="text-gradient">TRUST.</span>
@@ -201,7 +234,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {products.map((product, index) => (
               <motion.div
                 key={product.name}
@@ -210,7 +243,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-charcoal/80 backdrop-blur-sm border border-concrete/20 rounded-lg overflow-hidden card-hover"
+                className="bg-charcoal/80 backdrop-blur-sm border border-concrete/20 rounded-lg overflow-hidden card-hover stagger-item"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -241,7 +274,7 @@ export default function Home() {
       {/* About Section */}
       <section className="section-padding bg-charcoal">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
             <div className="animate-on-scroll">
               <div className="text-orange font-barlow font-bold text-sm tracking-widest mb-4">
                 ABOUT US
@@ -266,26 +299,26 @@ export default function Home() {
             </div>
 
             <div className="animate-on-scroll">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative h-48 rounded-lg overflow-hidden">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <div className="relative h-36 sm:h-48 rounded-lg overflow-hidden">
                   <img
                     src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2940&auto=format&fit=crop"
                     alt="Construction Site"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover parallax-image"
                   />
                 </div>
-                <div className="relative h-48 rounded-lg overflow-hidden">
+                <div className="relative h-36 sm:h-48 rounded-lg overflow-hidden">
                   <img
                     src="https://images.unsplash.com/photo-1590496793907-4102a7d6d5fb?q=80&w=2940&auto=format&fit=crop"
                     alt="Building Materials"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover parallax-image"
                   />
                 </div>
-                <div className="relative h-48 rounded-lg overflow-hidden col-span-2">
+                <div className="relative h-36 sm:h-48 rounded-lg overflow-hidden col-span-2">
                   <img
                     src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2940&auto=format&fit=crop"
                     alt="Construction Materials Warehouse"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover parallax-image"
                   />
                 </div>
               </div>
@@ -303,7 +336,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -338,32 +371,20 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
             {[
               "Dalmia Cement",
-              "UltraTech Cement",
-              "ACC Cement",
               "Tata Tiscon",
-              "JSW Steel",
-              "Kamdhenu",
-              "SAIL",
               "Visaka",
               "Tata Sheets",
-              "Everest Industries",
-              "Asian Paints",
-              "Berger Paints",
-              "Nerolac Paints",
-              "Dulux Paints",
               "Tata Structura",
-              "Jindal Steel",
-              "Hettich",
-              "Hafele",
-              "Saint-Gobain",
-              "Shree Cement",
-              "Ambuja Cement",
-              "Birla Cement",
-              "Kajaria Tiles",
-              "Somany Ceramics",
+              "Asian Paints",
+              "UltraTech",
+              "ACC",
+              "Birla",
+              "JSW Steel",
+              "Berger Paints",
+              "Nerolac",
             ].map((brand, index) => (
               <motion.div
                 key={brand}
@@ -371,7 +392,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.04 }}
-                className="bg-white/5 backdrop-blur-sm border border-concrete/20 rounded-lg p-6 flex items-center justify-center hover:bg-white/10 hover:border-orange/30 transition-all duration-300 min-h-[100px]"
+                className="bg-white/5 backdrop-blur-sm border border-concrete/20 rounded-lg p-4 sm:p-6 flex items-center justify-center hover:bg-white/10 hover:border-orange/30 transition-all duration-300 min-h-[80px] sm:min-h-[100px] stagger-item"
               >
                 <div className="font-barlow font-bold text-white text-center text-sm">
                   {brand}
@@ -399,7 +420,7 @@ export default function Home() {
               Get in touch with us for product enquiries, quotations, and expert
               guidance on construction materials.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
               <Link
                 href="/contact"
                 className="bg-white text-orange font-semibold px-8 py-4 rounded-md transition-all duration-300 hover:scale-105"

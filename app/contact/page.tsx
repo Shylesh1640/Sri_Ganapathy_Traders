@@ -79,7 +79,7 @@ export default function ContactPage() {
       {/* Contact Information and Form */}
       <section className="section-padding bg-charcoal">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
             {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}

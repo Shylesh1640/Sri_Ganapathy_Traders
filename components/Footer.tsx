@@ -9,9 +9,9 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center p-2 shadow-lg">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center p-2 shadow-lg">
                 <img
-                  src="/logo.png"
+                  src="/assets/logo.png"
                   alt="Sri Ganapathy Traders Logo"
                   className="w-full h-full object-contain rounded-full"
                 />
@@ -156,9 +156,19 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-concrete/20 mt-12 pt-8 text-center text-concrete text-sm">
-          <p>
+          <p className="mb-2">
             &copy; {new Date().getFullYear()} Sri Ganapathy Traders. All rights
             reserved.
+          </p>
+          <p className="text-xs">
+            <a
+              href="https://sri-ganapathy-traders.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-orange transition-colors duration-300"
+            >
+              www.sri-ganapathy-traders.vercel.app
+            </a>
           </p>
         </div>
       </div>

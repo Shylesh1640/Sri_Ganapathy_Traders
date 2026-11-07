@@ -33,7 +33,7 @@ export default function AboutPage() {
   ];
 
   const stats = [
-    { number: "24+", label: "Premium Brands" },
+    { number: "12+", label: "Premium Brands" },
     { number: "100K+", label: "Happy Customers" },
     { number: "2008", label: "Established Since" },
     { number: "100%", label: "Authentic Products" },
@@ -63,7 +63,7 @@ export default function AboutPage() {
       {/* Main Content */}
       <section className="section-padding bg-charcoal">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mb-12 md:mb-20">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -86,10 +86,9 @@ export default function AboutPage() {
                 </p>
                 <p>
                   We specialize in supplying premium construction materials from
-                  trusted brands, including Dalmia Cement, UltraTech, ACC, Tata
-                  Tiscon TMT Bars, JSW Steel, Visaka and Tata Roofing Sheets, Tata
-                  Structura Steel, Asian Paints, Berger Paints, and a comprehensive
-                  range of construction hardware.
+                  trusted brands, including Dalmia Cement, Tata Tiscon TMT Bars,
+                  Visaka and Tata Roofing Sheets, Tata Structura Steel, Asian
+                  Paints, and a comprehensive range of construction hardware.
                 </p>
                 <p>
                   Our commitment to quality, competitive pricing, and customer
@@ -171,7 +170,7 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
@@ -199,7 +198,7 @@ export default function AboutPage() {
       {/* Services */}
       <section className="section-padding bg-charcoal">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
