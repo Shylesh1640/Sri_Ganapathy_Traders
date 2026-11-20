@@ -36,17 +36,63 @@ body {
   }
 }
 
+/* ─── HERO OVERLAYS ─── */
 .hero-gradient {
-  background: linear-gradient(135deg, rgba(15, 20, 25, 0.95) 0%, rgba(0, 61, 91, 0.90) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(15, 20, 25, 0.92) 0%,
+    rgba(0, 42, 63, 0.82) 50%,
+    rgba(15, 20, 25, 0.75) 100%
+  );
 }
 
+/* Noise grain texture for realistic depth */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px;
+  opacity: 0.6;
+  mix-blend-mode: overlay;
+}
+
+/* Inner vignette for depth */
+.vignette-overlay {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+/* Grid overlay for sci-fi depth */
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(244, 119, 33, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 119, 33, 0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: gridPulse 8s ease-in-out infinite;
+}
+
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+/* ─── TEXT ─── */
 .text-gradient {
-  background: linear-gradient(135deg, #F47721 0%, #ff9f5a 100%);
+  background: linear-gradient(135deg, #F47721 0%, #ff9f5a 50%, #F47721 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: shimmerText 4s linear infinite;
 }
 
+@keyframes shimmerText {
+  to { background-position: 200% center; }
+}
+
+/* ─── LAYOUT ─── */
 .section-padding {
   @apply py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-16;
 }
@@ -55,7 +101,109 @@ body {
   @apply max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8;
 }
 
-/* Responsive utilities */
+/* ─── BUTTONS ─── */
+.btn-primary {
+  @apply bg-orange hover:bg-orange/90 text-white font-semibold px-8 py-4 rounded-md
+         transition-all duration-300 hover:scale-105
+         hover:shadow-[0_8px_30px_rgba(244,119,33,0.5)];
+}
+
+.btn-secondary {
+  @apply bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-md
+         transition-all duration-300 hover:bg-white hover:text-charcoal;
+}
+
+/* Magnetic button subtle lift */
+.magnetic-btn {
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.3s ease;
+}
+.magnetic-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ─── CARDS ─── */
+.card-hover {
+  @apply transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl;
+}
+
+/* 3D card base */
+.card-3d {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ─── ANIMATIONS ─── */
+.fade-in {
+  animation: fadeIn 0.6s ease-in both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Float */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%  { transform: translateY(-15px) rotate(1deg); }
+  66%  { transform: translateY(-8px) rotate(-1deg); }
+}
+
+.float-anim {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse ring */
+@keyframes pulseRing {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.pulse-ring::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #F47721;
+  animation: pulseRing 2s ease-out infinite;
+}
+
+/* Shimmer sweep */
+@keyframes shimmerSweep {
+  0% { transform: translateX(-100%) skewX(-12deg); }
+  100% { transform: translateX(200%) skewX(-12deg); }
+}
+
+.shimmer-effect::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: shimmerSweep 2.5s ease-in-out infinite;
+}
+
+/* Spin slow */
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+
+.spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+/* 3D perspective utilities */
+.perspective-800 { perspective: 800px; }
+.perspective-1200 { perspective: 1200px; }
+.preserve-3d { transform-style: preserve-3d; }
+
+/* ─── RESPONSIVE ─── */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .responsive-grid {
   @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
 }
@@ -64,52 +212,8 @@ body {
   @apply flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4;
 }
 
-.responsive-text-xl {
-  @apply text-lg sm:text-xl md:text-2xl;
-}
-
-.responsive-text-2xl {
-  @apply text-xl sm:text-2xl md:text-3xl;
-}
-
-.responsive-text-4xl {
-  @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
-}
-
-.responsive-text-6xl {
-  @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl;
-}
-
-/* Ensure images don't overflow */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Smooth animations */
-.fade-in {
-  animation: fadeIn 0.6s ease-in;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.btn-primary {
-  @apply bg-orange hover:bg-orange/90 text-white font-semibold px-8 py-4 rounded-md transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange/30;
-}
-
-.btn-secondary {
-  @apply bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-md transition-all duration-300 hover:bg-white hover:text-charcoal;
-}
-
-.card-hover {
-  @apply transition-all duration-500 hover:scale-105 hover:shadow-2xl;
-}
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0F1419; }
+::-webkit-scrollbar-thumb { background: #F47721; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #ff9f5a; }
