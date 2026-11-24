@@ -1,8 +1,16 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import {
+  Tilt3D as TiltCard,
+  Reveal3D,
+  FloatingGeometry,
+  CubeShowcase,
+  OrbitLogos,
+  Parallax3DImage,
+} from "@/components/ThreeD";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
@@ -22,63 +30,6 @@ import {
 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
-
-// 3D Tilt Card wrapper
-function TiltCard({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const springX = useSpring(x, { stiffness: 180, damping: 18 });
-  const springY = useSpring(y, { stiffness: 180, damping: 18 });
-  const rotateX = useTransform(springY, [-0.5, 0.5], [10, -10]);
-  const rotateY = useTransform(springX, [-0.5, 0.5], [-10, 10]);
-  const glowX = useTransform(springX, [-0.5, 0.5], [0, 100]);
-  const glowY = useTransform(springY, [-0.5, 0.5], [0, 100]);
-
-  const handleMouseMove = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!cardRef.current) return;
-      const rect = cardRef.current.getBoundingClientRect();
-      x.set((e.clientX - rect.left) / rect.width - 0.5);
-      y.set((e.clientY - rect.top) / rect.height - 0.5);
-    },
-    [x, y]
-  );
-
-  const handleMouseLeave = useCallback(() => {
-    x.set(0);
-    y.set(0);
-  }, [x, y]);
-
-  return (
-    <motion.div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      className={className}
-    >
-      {/* Dynamic spotlight */}
-      <motion.div
-        className="absolute inset-0 rounded-lg pointer-events-none z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{
-          background: useTransform(
-            [glowX, glowY],
-            ([lx, ly]) =>
-              `radial-gradient(circle at ${lx}% ${ly}%, rgba(244,119,33,0.15) 0%, transparent 60%)`
-          ),
-        }}
-      />
-      {children}
-    </motion.div>
-  );
-}
 
 // Animated counter
 function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
@@ -413,6 +364,9 @@ export default function Home() {
           <div className="absolute inset-0 z-[1] vignette-overlay" />
         </div>
 
+        {/* Floating 3D geometry */}
+        <FloatingGeometry />
+
         {/* Particles */}
         <HeroParticles />
 
@@ -698,6 +652,54 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── 3D PRODUCT SHOWCASE ─── */}
+      <section className="section-padding bg-charcoal relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <Reveal3D direction="left" className="order-2 lg:order-1">
+              <CubeShowcase
+                images={[
+                  "/assets/images/cement-bags.jpg",
+                  "/assets/images/tmt-steel-bars.jpg",
+                  "/assets/images/roofing-sheets.jpg",
+                  "/assets/images/structural-steel.jpg",
+                  "/assets/images/paint-cans.jpg",
+                  "/assets/images/construction-tools.jpg",
+                ]}
+              />
+            </Reveal3D>
+
+            <Reveal3D direction="right" className="order-1 lg:order-2">
+              <span className="text-orange font-barlow font-bold text-sm tracking-widest uppercase mb-3 block">
+                Interactive Showcase
+              </span>
+              <h2 className="font-barlow font-bold text-4xl md:text-5xl text-white mb-6">
+                Every Material You Need,
+                <span className="block text-gradient">Under One Roof</span>
+              </h2>
+              <p className="text-concrete text-lg leading-relaxed mb-8">
+                Explore our rotating showcase of premium construction materials.
+                Hover over the cube to pause it and take a closer look at the
+                range we stock for every stage of your project.
+              </p>
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {["Cement & Concrete", "TMT Reinforcement", "Roofing Solutions", "Structural Steel", "Paints & Coatings", "Tools & Hardware"].map((item) => (
+                  <div key={item} className="flex items-center space-x-2 text-concrete">
+                    <span className="w-1.5 h-1.5 rounded-full bg-orange flex-shrink-0" />
+                    <span className="text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <Link href="/products" className="btn-primary inline-flex items-center space-x-2">
+                <span>Explore Full Range</span>
+                <ArrowRight size={18} />
+              </Link>
+            </Reveal3D>
+          </div>
+        </div>
+      </section>
+
       {/* ─── ABOUT ─── */}
       <section className="section-padding bg-charcoal relative overflow-hidden">
         {/* Decorative 3D shape */}
@@ -753,23 +755,23 @@ export default function Home() {
                   { src: "/assets/images/cement-bags.jpg", alt: "Cement bags", span: "" },
                   { src: "/assets/images/tmt-steel-bars.jpg", alt: "TMT bars", span: "" },
                   { src: "/assets/images/roofing-sheets.jpg", alt: "Roofing sheets", span: "col-span-2" },
-                ].map((img, i) => (
-                  <motion.div
+                ].map((img) => (
+                  <TiltCard
                     key={img.src}
-                    className={`relative h-44 rounded-xl overflow-hidden ${img.span} group cursor-pointer`}
-                    whileHover={{ scale: 1.03, z: 20, rotateX: -3 }}
-                    transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                    style={{ transformStyle: "preserve-3d" }}
+                    maxTilt={8}
+                    hoverScale={1.03}
+                    className={`h-44 overflow-hidden rounded-xl group cursor-pointer ${img.span}`}
                   >
-                    <img
+                    <Parallax3DImage
                       src={img.src}
                       alt={img.alt}
-                      className="w-full h-full object-cover parallax-image transition-transform duration-700 group-hover:scale-110"
+                      className="h-full w-full"
+                      imageClassName="transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     {/* 3D edge glow */}
                     <div className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10 group-hover:ring-orange/40 transition-all duration-300" />
-                  </motion.div>
+                  </TiltCard>
                 ))}
               </div>
             </div>
@@ -779,7 +781,8 @@ export default function Home() {
 
       {/* ─── FEATURES ─── */}
       <section className="section-padding bg-navy/20 relative overflow-hidden">
-        <div className="container-custom">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10">
           <div className="animate-on-scroll text-center mb-16">
             <span className="text-orange font-barlow font-bold text-sm tracking-widest uppercase mb-3 block">
               Our Strengths

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import {
   Phone,
   MessageCircle,
@@ -10,6 +9,7 @@ import {
   Clock,
   Send,
 } from "lucide-react";
+import { Tilt3D, Reveal3D, FloatingGeometry } from "@/components/ThreeD";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -58,13 +58,10 @@ export default function ContactPage() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-navy via-navyDark to-charcoal">
-        <div className="container-custom text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+      <section className="section-padding bg-gradient-to-br from-navy via-navyDark to-charcoal relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10 text-center">
+          <Reveal3D direction="up">
             <h1 className="font-barlow font-black text-6xl md:text-7xl text-white mb-6">
               Contact <span className="text-gradient">Us</span>
             </h1>
@@ -72,28 +69,24 @@ export default function ContactPage() {
               Get in touch for product enquiries, quotations, or visit our
               showroom in Nagercoil.
             </p>
-          </motion.div>
+          </Reveal3D>
         </div>
       </section>
 
       {/* Contact Information and Form */}
-      <section className="section-padding bg-charcoal">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+      <section className="section-padding bg-charcoal relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12" style={{ perspective: "1200px" }}>
             {/* Contact Info */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
+            <Reveal3D direction="left">
               <h2 className="font-barlow font-bold text-4xl text-white mb-8">
                 Get In Touch
               </h2>
 
               <div className="space-y-6">
                 {/* Phone Numbers */}
-                <div className="bg-navy/30 backdrop-blur-sm border border-concrete/20 rounded-lg p-6">
+                <div className="depth-hover bg-navy/30 backdrop-blur-sm border border-concrete/20 rounded-lg p-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-orange rounded-lg flex items-center justify-center flex-shrink-0">
                       <Phone className="w-6 h-6 text-white" />
@@ -119,7 +112,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* WhatsApp */}
-                <div className="bg-navy/30 backdrop-blur-sm border border-concrete/20 rounded-lg p-6">
+                <div className="depth-hover bg-navy/30 backdrop-blur-sm border border-concrete/20 rounded-lg p-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-orange rounded-lg flex items-center justify-center flex-shrink-0">
                       <MessageCircle className="w-6 h-6 text-white" />
@@ -141,7 +134,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Email */}
-                <div className="bg-navy/30 backdrop-blur-sm border border-concrete/20 rounded-lg p-6">
+                <div className="depth-hover bg-navy/30 backdrop-blur-sm border border-concrete/20 rounded-lg p-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-orange rounded-lg flex items-center justify-center flex-shrink-0">
                       <Mail className="w-6 h-6 text-white" />
@@ -161,7 +154,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Location */}
-                <div className="bg-navy/30 backdrop-blur-sm border border-concrete/20 rounded-lg p-6">
+                <div className="depth-hover bg-navy/30 backdrop-blur-sm border border-concrete/20 rounded-lg p-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-orange rounded-lg flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-6 h-6 text-white" />
@@ -188,7 +181,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Business Hours */}
-                <div className="bg-navy/30 backdrop-blur-sm border border-concrete/20 rounded-lg p-6">
+                <div className="depth-hover bg-navy/30 backdrop-blur-sm border border-concrete/20 rounded-lg p-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-orange rounded-lg flex items-center justify-center flex-shrink-0">
                       <Clock className="w-6 h-6 text-white" />
@@ -207,15 +200,11 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </Reveal3D>
 
             {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
+            <Reveal3D direction="right" delay={0.1}>
+              <Tilt3D maxTilt={6} className="rounded-lg">
               <div className="bg-navy/30 backdrop-blur-sm border border-concrete/20 rounded-lg p-8">
                 <h2 className="font-barlow font-bold text-4xl text-white mb-6">
                   Send Enquiry
@@ -324,21 +313,18 @@ export default function ContactPage() {
                   </button>
                 </form>
               </div>
-            </motion.div>
+              </Tilt3D>
+            </Reveal3D>
           </div>
         </div>
       </section>
 
       {/* Service Area Section */}
-      <section className="section-padding bg-navy/30">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-gradient-to-r from-orange to-orange/80 rounded-2xl p-12 text-center"
-          >
+      <section className="section-padding bg-navy/30 relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10">
+          <Reveal3D direction="up">
+            <div className="bg-gradient-to-r from-orange to-orange/80 rounded-2xl p-12 text-center shadow-[0_20px_60px_rgba(244,119,33,0.25)]">
             <h2 className="font-barlow font-bold text-4xl md:text-5xl text-white mb-6">
               We Deliver Across Kanniyakumari
             </h2>
@@ -366,7 +352,8 @@ export default function ContactPage() {
                 <span>WhatsApp Us</span>
               </a>
             </div>
-          </motion.div>
+            </div>
+          </Reveal3D>
         </div>
       </section>
     </div>

@@ -8,8 +8,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center p-2 shadow-lg">
+            <div className="group flex items-center space-x-3 mb-4">
+              <div className="logo-3d w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center p-2 shadow-lg">
                 <img
                   src="/assets/logo.png"
                   alt="Sri Ganapathy Traders Logo"

@@ -38,7 +38,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20 px-4 md:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 p-1.5 shadow-lg">
+            <div className="logo-3d w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center p-1.5 shadow-lg">
               <img
                 src="/assets/logo.png"
                 alt="Sri Ganapathy Traders Logo"

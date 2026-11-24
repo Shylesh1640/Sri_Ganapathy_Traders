@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   Truck,
   DollarSign,
@@ -9,6 +8,12 @@ import {
   CheckCircle,
   MessageCircle,
 } from "lucide-react";
+import {
+  Tilt3D,
+  Reveal3D,
+  FloatingGeometry,
+  Parallax3DImage,
+} from "@/components/ThreeD";
 
 export default function WholesalePage() {
   const benefits = [
@@ -83,13 +88,10 @@ export default function WholesalePage() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-navy via-navyDark to-charcoal">
-        <div className="container-custom text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+      <section className="section-padding bg-gradient-to-br from-navy via-navyDark to-charcoal relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10 text-center">
+          <Reveal3D direction="up">
             <h1 className="font-barlow font-black text-6xl md:text-7xl text-white mb-6">
               Wholesale <span className="text-gradient">Supply</span>
             </h1>
@@ -108,166 +110,131 @@ export default function WholesalePage() {
               <MessageCircle size={20} />
               <span>Get Wholesale Quote on WhatsApp</span>
             </a>
-          </motion.div>
+          </Reveal3D>
         </div>
       </section>
 
       {/* Benefits */}
-      <section className="section-padding bg-charcoal">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
+      <section className="section-padding bg-charcoal relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10">
+          <Reveal3D className="text-center mb-16">
             <h2 className="font-barlow font-bold text-5xl md:text-6xl text-white mb-4">
               Wholesale Benefits
             </h2>
             <p className="text-concrete text-lg max-w-2xl mx-auto">
               Why contractors and builders choose us for bulk material supply
             </p>
-          </motion.div>
+          </Reveal3D>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8" style={{ perspective: "1100px" }}>
             {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-navy/30 backdrop-blur-sm border border-concrete/20 rounded-lg p-6 text-center"
-              >
-                <div className="w-16 h-16 bg-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white">
-                  {benefit.icon}
-                </div>
-                <h3 className="font-barlow font-bold text-xl text-white mb-3">
-                  {benefit.title}
-                </h3>
-                <p className="text-concrete leading-relaxed">
-                  {benefit.description}
-                </p>
-              </motion.div>
+              <Reveal3D key={benefit.title} delay={index * 0.08} direction="up">
+                <Tilt3D
+                  maxTilt={10}
+                  className="h-full rounded-lg border border-concrete/20 bg-navy/30 p-6 text-center backdrop-blur-sm"
+                >
+                  <div className="w-16 h-16 bg-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white" style={{ transform: "translateZ(30px)" }}>
+                    {benefit.icon}
+                  </div>
+                  <h3 className="font-barlow font-bold text-xl text-white mb-3">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-concrete leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </Tilt3D>
+              </Reveal3D>
             ))}
           </div>
         </div>
       </section>
 
       {/* Product Categories */}
-      <section className="section-padding bg-navy/30">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
+      <section className="section-padding bg-navy/30 relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10">
+          <Reveal3D className="text-center mb-16">
             <h2 className="font-barlow font-bold text-5xl md:text-6xl text-white mb-4">
               Wholesale Categories
             </h2>
             <p className="text-concrete text-lg max-w-2xl mx-auto">
               Get competitive quotes for bulk material requirements
             </p>
-          </motion.div>
+          </Reveal3D>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" style={{ perspective: "1200px" }}>
             {categories.map((category, index) => (
-              <motion.div
-                key={category.name}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-charcoal/80 backdrop-blur-sm border border-concrete/20 rounded-lg overflow-hidden hover:border-orange/50 transition-all duration-300"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={category.image}
-                    alt={category.name}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent"></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-barlow font-bold text-2xl text-white mb-3">
-                    {category.name}
-                  </h3>
-                  <p className="text-concrete mb-6">{category.description}</p>
-                  <button
-                    onClick={() => handleWhatsAppClick(category.name)}
-                    className="w-full bg-orange hover:bg-orange/90 text-white font-semibold py-3 rounded-md transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
-                  >
-                    <MessageCircle size={18} />
-                    <span>Get Quote</span>
-                  </button>
-                </div>
-              </motion.div>
+              <Reveal3D key={category.name} delay={index * 0.08} direction="up">
+                <Tilt3D
+                  hoverScale={1.03}
+                  className="group h-full overflow-hidden rounded-lg border border-concrete/20 bg-charcoal/80 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.35)] transition-colors duration-300 hover:border-orange/50"
+                >
+                  <div className="relative h-48 overflow-hidden" style={{ transform: "translateZ(18px)" }}>
+                    <img
+                      src={category.image}
+                      alt={category.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent"></div>
+                  </div>
+                  <div className="p-6" style={{ transform: "translateZ(32px)" }}>
+                    <h3 className="font-barlow font-bold text-2xl text-white mb-3">
+                      {category.name}
+                    </h3>
+                    <p className="text-concrete mb-6">{category.description}</p>
+                    <button
+                      onClick={() => handleWhatsAppClick(category.name)}
+                      className="w-full bg-orange hover:bg-orange/90 text-white font-semibold py-3 rounded-md transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
+                    >
+                      <MessageCircle size={18} />
+                      <span>Get Quote</span>
+                    </button>
+                  </div>
+                </Tilt3D>
+              </Reveal3D>
             ))}
           </div>
         </div>
       </section>
 
       {/* Visual Gallery */}
-      <section className="section-padding bg-charcoal">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
-          >
-            <div className="relative h-64 rounded-lg overflow-hidden group">
-              <img
-                src="/assets/images/cement-bags.jpg"
-                alt="Bulk cement bags supply"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white font-barlow font-bold text-xl">
-                Bulk Supply
-              </div>
-            </div>
-            <div className="relative h-64 rounded-lg overflow-hidden group">
-              <img
-                src="/assets/images/tmt-steel-bars.jpg"
-                alt="Wholesale TMT steel bars"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white font-barlow font-bold text-xl">
-                Wholesale Rates
-              </div>
-            </div>
-            <div className="relative h-64 rounded-lg overflow-hidden group">
-              <img
-                src="/assets/images/roofing-sheets.jpg"
-                alt="Roofing sheets for projects"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white font-barlow font-bold text-xl">
-                Project Support
-              </div>
-            </div>
-          </motion.div>
+      <section className="section-padding bg-charcoal relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" style={{ perspective: "1200px" }}>
+            {[
+              { src: "/assets/images/cement-bags.jpg", alt: "Bulk cement bags supply", label: "Bulk Supply" },
+              { src: "/assets/images/tmt-steel-bars.jpg", alt: "Wholesale TMT steel bars", label: "Wholesale Rates" },
+              { src: "/assets/images/roofing-sheets.jpg", alt: "Roofing sheets for projects", label: "Project Support" },
+            ].map((item, index) => (
+              <Reveal3D key={item.label} delay={index * 0.08} direction="up">
+                <Tilt3D maxTilt={9} className="group h-64 overflow-hidden rounded-lg">
+                  <Parallax3DImage
+                    src={item.src}
+                    alt={item.alt}
+                    className="h-full w-full"
+                    imageClassName="transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent"></div>
+                  <div
+                    className="absolute bottom-4 left-4 text-white font-barlow font-bold text-xl"
+                    style={{ transform: "translateZ(30px)" }}
+                  >
+                    {item.label}
+                  </div>
+                </Tilt3D>
+              </Reveal3D>
+            ))}
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
+          <Reveal3D className="text-center mb-12">
             <h2 className="font-barlow font-bold text-5xl md:text-6xl text-white mb-4">
               We Serve
             </h2>
-          </motion.div>
+          </Reveal3D>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6" style={{ perspective: "1000px" }}>
             {[
               "Building Contractors",
               "Construction Companies",
@@ -278,31 +245,22 @@ export default function WholesalePage() {
               "Project Managers",
               "Infrastructure Projects",
             ].map((client, index) => (
-              <motion.div
-                key={client}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="bg-navy/30 backdrop-blur-sm border border-concrete/20 rounded-lg p-6 text-center"
-              >
-                <CheckCircle className="w-8 h-8 text-orange mx-auto mb-3" />
-                <div className="text-white font-semibold">{client}</div>
-              </motion.div>
+              <Reveal3D key={client} delay={index * 0.04} direction="up">
+                <Tilt3D maxTilt={8} className="h-full rounded-lg border border-concrete/20 bg-navy/30 p-6 text-center backdrop-blur-sm">
+                  <CheckCircle className="w-8 h-8 text-orange mx-auto mb-3" />
+                  <div className="text-white font-semibold">{client}</div>
+                </Tilt3D>
+              </Reveal3D>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-orange to-orange/80">
-        <div className="container-custom text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+      <section className="section-padding bg-gradient-to-r from-orange to-orange/80 relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10 text-center">
+          <Reveal3D direction="up">
             <h2 className="font-barlow font-bold text-4xl md:text-5xl text-white mb-6">
               Ready to Order in Bulk?
             </h2>
@@ -327,7 +285,7 @@ export default function WholesalePage() {
                 <span>Call: +91 94865 79329</span>
               </a>
             </div>
-          </motion.div>
+          </Reveal3D>
         </div>
       </section>
     </div>

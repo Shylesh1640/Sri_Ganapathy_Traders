@@ -197,6 +197,142 @@ body {
 .perspective-800 { perspective: 800px; }
 .perspective-1200 { perspective: 1200px; }
 .preserve-3d { transform-style: preserve-3d; }
+.scene-3d { perspective: 1000px; }
+
+/* ───────────────────────── 3D ENGINE ───────────────────────── */
+
+/* Spinning wireframe cube */
+.cube-3d {
+  --cube: 64px;
+  position: relative;
+  width: var(--cube);
+  height: var(--cube);
+  transform-style: preserve-3d;
+  animation: cubeSpin 18s linear infinite;
+}
+
+.cube-face {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(244, 119, 33, 0.45);
+  background: linear-gradient(
+    135deg,
+    rgba(244, 119, 33, 0.14),
+    rgba(0, 61, 91, 0.14)
+  );
+  box-shadow: inset 0 0 18px rgba(244, 119, 33, 0.18);
+  backdrop-filter: blur(1px);
+}
+
+.cube-face.front  { transform: translateZ(calc(var(--cube) / 2)); }
+.cube-face.back   { transform: rotateY(180deg) translateZ(calc(var(--cube) / 2)); }
+.cube-face.right  { transform: rotateY(90deg) translateZ(calc(var(--cube) / 2)); }
+.cube-face.left   { transform: rotateY(-90deg) translateZ(calc(var(--cube) / 2)); }
+.cube-face.top    { transform: rotateX(90deg) translateZ(calc(var(--cube) / 2)); }
+.cube-face.bottom { transform: rotateX(-90deg) translateZ(calc(var(--cube) / 2)); }
+
+@keyframes cubeSpin {
+  0%   { transform: rotateX(-18deg) rotateY(0deg); }
+  100% { transform: rotateX(-18deg) rotateY(360deg); }
+}
+
+/* Image cube showcase */
+.cube-gallery {
+  --size: 230px;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  transform-style: preserve-3d;
+  animation: cubeGallerySpin 26s linear infinite;
+}
+
+.cube-gallery:hover {
+  animation-play-state: paused;
+}
+
+.showcase-face {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(244, 119, 33, 0.5);
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.55),
+    0 0 24px rgba(244, 119, 33, 0.15);
+}
+
+.showcase-face.face-0 { transform: translateZ(calc(var(--size) / 2)); }
+.showcase-face.face-1 { transform: rotateY(90deg) translateZ(calc(var(--size) / 2)); }
+.showcase-face.face-2 { transform: rotateY(180deg) translateZ(calc(var(--size) / 2)); }
+.showcase-face.face-3 { transform: rotateY(-90deg) translateZ(calc(var(--size) / 2)); }
+.showcase-face.face-4 { transform: rotateX(90deg) translateZ(calc(var(--size) / 2)); }
+.showcase-face.face-5 { transform: rotateX(-90deg) translateZ(calc(var(--size) / 2)); }
+
+@keyframes cubeGallerySpin {
+  0%   { transform: rotateX(-16deg) rotateY(0deg); }
+  100% { transform: rotateX(-16deg) rotateY(360deg); }
+}
+
+/* 3D logo orbit */
+.orbit-3d {
+  position: relative;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  animation: orbitSpin 26s linear infinite;
+}
+
+.orbit-3d:hover {
+  animation-play-state: paused;
+}
+
+.orbit-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 128px;
+  height: 84px;
+  margin: -42px 0 0 -64px;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+@keyframes orbitSpin {
+  0%   { transform: rotateX(-8deg) rotateY(0deg); }
+  100% { transform: rotateX(-8deg) rotateY(360deg); }
+}
+
+/* Logo flip */
+.logo-3d {
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+}
+.group:hover .logo-3d {
+  transform: rotateY(360deg);
+}
+
+/* Gentle depth hover */
+.depth-hover {
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.5s ease;
+  transform-style: preserve-3d;
+}
+.depth-hover:hover {
+  transform: translateY(-6px) rotateX(2deg) rotateY(-2deg);
+  box-shadow: 0 22px 45px rgba(244, 119, 33, 0.18);
+}
+
+/* Floating depth drift */
+@keyframes float3d {
+  0%, 100% { transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg); }
+  33%      { transform: translate3d(0, -14px, 18px) rotateX(2deg) rotateY(3deg); }
+  66%      { transform: translate3d(0, -6px, 8px) rotateX(-2deg) rotateY(-3deg); }
+}
+
+.float-3d {
+  animation: float3d 7s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
 
 /* ─── RESPONSIVE ─── */
 img {

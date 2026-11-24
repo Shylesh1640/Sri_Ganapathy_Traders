@@ -1,8 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Building2, Users, Award, TrendingUp, Heart, Target } from "lucide-react";
 import Link from "next/link";
+import {
+  Tilt3D,
+  Reveal3D,
+  FloatingGeometry,
+  Parallax3DImage,
+} from "@/components/ThreeD";
 
 export default function AboutPage() {
   const values = [
@@ -42,13 +47,10 @@ export default function AboutPage() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-navy via-navyDark to-charcoal">
-        <div className="container-custom text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+      <section className="section-padding bg-gradient-to-br from-navy via-navyDark to-charcoal relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10 text-center">
+          <Reveal3D direction="up">
             <h1 className="font-barlow font-black text-6xl md:text-7xl text-white mb-6">
               About <span className="text-gradient">Us</span>
             </h1>
@@ -56,20 +58,16 @@ export default function AboutPage() {
               Your trusted partner for premium construction materials in
               Nagercoil and Kanniyakumari District.
             </p>
-          </motion.div>
+          </Reveal3D>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="section-padding bg-charcoal">
-        <div className="container-custom">
+      <section className="section-padding bg-charcoal relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mb-12 md:mb-20">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
+            <Reveal3D direction="left">
               <div className="text-orange font-barlow font-bold text-sm tracking-widest mb-4">
                 OUR STORY
               </div>
@@ -98,145 +96,125 @@ export default function AboutPage() {
                   all over Kanniyakumari District.
                 </p>
               </div>
-            </motion.div>
+            </Reveal3D>
 
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative h-48 rounded-lg overflow-hidden">
-                  <img
+            <Reveal3D direction="right" className="relative" delay={0.1}>
+              <div className="grid grid-cols-2 gap-4" style={{ perspective: "1200px" }}>
+                <Tilt3D maxTilt={10} className="group h-48 overflow-hidden rounded-lg">
+                  <Parallax3DImage
                     src="/assets/images/cement-bags.jpg"
                     alt="Dalmia cement bags"
-                    className="w-full h-full object-cover"
+                    className="h-full w-full"
+                    imageClassName="transition-transform duration-700 group-hover:scale-110"
                   />
-                </div>
-                <div className="relative h-48 rounded-lg overflow-hidden">
-                  <img
+                </Tilt3D>
+                <Tilt3D maxTilt={10} className="group h-48 overflow-hidden rounded-lg">
+                  <Parallax3DImage
                     src="/assets/images/tmt-steel-bars.jpg"
                     alt="TMT steel reinforcement bars"
-                    className="w-full h-full object-cover"
+                    className="h-full w-full"
+                    imageClassName="transition-transform duration-700 group-hover:scale-110"
                   />
-                </div>
-                <div className="relative h-48 rounded-lg overflow-hidden col-span-2">
-                  <img
+                </Tilt3D>
+                <Tilt3D maxTilt={8} className="group col-span-2 h-48 overflow-hidden rounded-lg">
+                  <Parallax3DImage
                     src="/assets/images/roofing-sheets.jpg"
                     alt="Roofing sheets"
-                    className="w-full h-full object-cover"
+                    className="h-full w-full"
+                    imageClassName="transition-transform duration-700 group-hover:scale-110"
                   />
-                </div>
+                </Tilt3D>
               </div>
-            </motion.div>
+            </Reveal3D>
           </div>
 
           {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12"
-          >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 py-12" style={{ perspective: "1000px" }}>
             {stats.map((stat, index) => (
-              <div key={stat.label} className="text-center">
-                <div className="font-barlow font-black text-5xl md:text-6xl text-gradient mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-concrete font-semibold">{stat.label}</div>
-              </div>
+              <Reveal3D key={stat.label} delay={index * 0.1} direction="up">
+                <Tilt3D maxTilt={8} className="rounded-xl border border-concrete/10 bg-charcoal/60 p-6 text-center backdrop-blur-sm">
+                  <div className="font-barlow font-black text-5xl md:text-6xl text-gradient mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-concrete font-semibold">{stat.label}</div>
+                </Tilt3D>
+              </Reveal3D>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="section-padding bg-navy/30">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
+      <section className="section-padding bg-navy/30 relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10">
+          <Reveal3D className="text-center mb-16">
             <h2 className="font-barlow font-bold text-5xl md:text-6xl text-white mb-4">
               Our Values
             </h2>
             <p className="text-concrete text-lg max-w-2xl mx-auto">
               The principles that guide our business and service to customers
             </p>
-          </motion.div>
+          </Reveal3D>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8" style={{ perspective: "1100px" }}>
             {values.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-charcoal/80 backdrop-blur-sm border border-concrete/20 rounded-lg p-6"
-              >
-                <div className="w-16 h-16 bg-orange rounded-full flex items-center justify-center mb-4 text-white">
-                  {value.icon}
-                </div>
-                <h3 className="font-barlow font-bold text-xl text-white mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-concrete leading-relaxed">
-                  {value.description}
-                </p>
-              </motion.div>
+              <Reveal3D key={value.title} delay={index * 0.08} direction="up">
+                <Tilt3D
+                  maxTilt={10}
+                  className="h-full rounded-lg border border-concrete/20 bg-charcoal/80 p-6 backdrop-blur-sm"
+                >
+                  <div className="w-16 h-16 bg-orange rounded-full flex items-center justify-center mb-4 text-white" style={{ transform: "translateZ(30px)" }}>
+                    {value.icon}
+                  </div>
+                  <h3 className="font-barlow font-bold text-xl text-white mb-3">
+                    {value.title}
+                  </h3>
+                  <p className="text-concrete leading-relaxed">
+                    {value.description}
+                  </p>
+                </Tilt3D>
+              </Reveal3D>
             ))}
           </div>
         </div>
       </section>
 
       {/* Services */}
-      <section className="section-padding bg-charcoal">
-        <div className="container-custom">
+      <section className="section-padding bg-charcoal relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative h-52 rounded-lg overflow-hidden col-span-2">
-                  <img
+            <Reveal3D direction="left">
+              <div className="grid grid-cols-2 gap-4" style={{ perspective: "1200px" }}>
+                <Tilt3D maxTilt={8} className="group col-span-2 h-52 overflow-hidden rounded-lg">
+                  <Parallax3DImage
                     src="/assets/images/structural-steel.jpg"
                     alt="Structural steel beams"
-                    className="w-full h-full object-cover"
+                    className="h-full w-full"
+                    imageClassName="transition-transform duration-700 group-hover:scale-110"
                   />
-                </div>
-                <div className="relative h-44 rounded-lg overflow-hidden">
-                  <img
+                </Tilt3D>
+                <Tilt3D maxTilt={10} className="group h-44 overflow-hidden rounded-lg">
+                  <Parallax3DImage
                     src="/assets/images/paint-cans.jpg"
                     alt="Asian Paints paint cans"
-                    className="w-full h-full object-cover"
+                    className="h-full w-full"
+                    imageClassName="transition-transform duration-700 group-hover:scale-110"
                   />
-                </div>
-                <div className="relative h-44 rounded-lg overflow-hidden">
-                  <img
+                </Tilt3D>
+                <Tilt3D maxTilt={10} className="group h-44 overflow-hidden rounded-lg">
+                  <Parallax3DImage
                     src="/assets/images/construction-tools.jpg"
                     alt="Construction hardware and tools"
-                    className="w-full h-full object-cover"
+                    className="h-full w-full"
+                    imageClassName="transition-transform duration-700 group-hover:scale-110"
                   />
-                </div>
+                </Tilt3D>
               </div>
-            </motion.div>
+            </Reveal3D>
 
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
+            <Reveal3D direction="right" delay={0.1}>
               <div className="text-orange font-barlow font-bold text-sm tracking-widest mb-4">
                 WHAT WE OFFER
               </div>
@@ -280,20 +258,16 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </Reveal3D>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-orange to-orange/80">
-        <div className="container-custom text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+      <section className="section-padding bg-gradient-to-r from-orange to-orange/80 relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10 text-center">
+          <Reveal3D direction="up">
             <h2 className="font-barlow font-bold text-4xl md:text-5xl text-white mb-6">
               Let's Build Together
             </h2>
@@ -315,7 +289,7 @@ export default function AboutPage() {
                 View Products
               </Link>
             </div>
-          </motion.div>
+          </Reveal3D>
         </div>
       </section>
     </div>

@@ -3,6 +3,13 @@
 import { motion } from "framer-motion";
 import { CheckCircle, Award, Shield } from "lucide-react";
 import Link from "next/link";
+import {
+  Tilt3D,
+  Reveal3D,
+  FloatingGeometry,
+  OrbitLogos,
+  Parallax3DImage,
+} from "@/components/ThreeD";
 
 const brands = [
   {
@@ -95,13 +102,10 @@ export default function BrandsPage() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-navy via-navyDark to-charcoal">
-        <div className="container-custom text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+      <section className="section-padding bg-gradient-to-br from-navy via-navyDark to-charcoal relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10 text-center">
+          <Reveal3D direction="up">
             <h1 className="font-barlow font-black text-6xl md:text-7xl text-white mb-6">
               Trusted <span className="text-gradient">Brands</span>
             </h1>
@@ -110,29 +114,37 @@ export default function BrandsPage() {
               to bring you authentic, premium-quality construction materials.
               Shipping available all over Kanniyakumari District.
             </p>
-          </motion.div>
+          </Reveal3D>
         </div>
       </section>
 
       {/* Brand Logos Grid */}
-      <section className="section-padding bg-charcoal">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
+      <section className="section-padding bg-charcoal relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10">
+          <Reveal3D className="text-center mb-4">
             <h2 className="font-barlow font-bold text-4xl md:text-5xl text-white mb-4">
               Our Brand Partners
             </h2>
             <p className="text-concrete text-lg">
-              Authentic products from trusted manufacturers
+              Authentic products from trusted manufacturers — explore the rotating showcase
             </p>
-          </motion.div>
+          </Reveal3D>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 mb-16">
+          <Reveal3D direction="up" className="mb-8">
+            <OrbitLogos
+              items={[
+                { name: "Dalmia Cement", logo: "/assets/brands/Dalmia.jpg" },
+                { name: "Tata Tiscon", logo: "/assets/brands/Tata_Tiscon.jpg" },
+                { name: "Visaka Industries", logo: "/assets/brands/visaka.png" },
+                { name: "Tata BlueScope Steel", logo: "/assets/brands/Tata_Shaktee.jpg" },
+                { name: "Tata Structura", logo: "/assets/brands/Tata_Structura.jpg" },
+                { name: "Asian Paints", logo: "/assets/brands/Asian_paints.jpg" },
+              ]}
+            />
+          </Reveal3D>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 mb-16" style={{ perspective: "1100px" }}>
             {[
               { name: "Dalmia Cement", logo: "/assets/brands/Dalmia.jpg" },
               { name: "Tata Tiscon", logo: "/assets/brands/Tata_Tiscon.jpg" },
@@ -141,24 +153,23 @@ export default function BrandsPage() {
               { name: "Tata Structura", logo: "/assets/brands/Tata_Structura.jpg" },
               { name: "Asian Paints", logo: "/assets/brands/Asian_paints.jpg" },
             ].map((brand, index) => (
-              <motion.div
-                key={brand.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-lg p-4 sm:p-6 flex items-center justify-center hover:shadow-xl hover:scale-105 transition-all duration-300"
-              >
-                <img
-                  src={brand.logo}
-                  alt={brand.name}
-                  className="w-full h-auto max-h-20 object-contain"
-                />
-              </motion.div>
+              <Reveal3D key={brand.name} delay={index * 0.06} direction="up">
+                <Tilt3D
+                  maxTilt={14}
+                  hoverScale={1.04}
+                  className="bg-white rounded-lg p-4 sm:p-6 flex items-center justify-center shadow-lg"
+                >
+                  <img
+                    src={brand.logo}
+                    alt={brand.name}
+                    className="w-full h-auto max-h-20 object-contain"
+                  />
+                </Tilt3D>
+              </Reveal3D>
             ))}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8" style={{ perspective: "1000px" }}>
             {[
               {
                 icon: <Shield className="w-10 h-10" />,
@@ -176,30 +187,26 @@ export default function BrandsPage() {
                 description: "Expert guidance and product specifications",
               },
             ].map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="w-20 h-20 bg-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white">
-                  {item.icon}
-                </div>
-                <h3 className="font-barlow font-bold text-xl text-white mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-concrete">{item.description}</p>
-              </motion.div>
+              <Reveal3D key={item.title} delay={index * 0.1} direction="up">
+                <Tilt3D maxTilt={8} className="h-full rounded-xl p-6 text-center">
+                  <div className="w-20 h-20 bg-orange rounded-full flex items-center justify-center mx-auto mb-4 text-white">
+                    {item.icon}
+                  </div>
+                  <h3 className="font-barlow font-bold text-xl text-white mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-concrete">{item.description}</p>
+                </Tilt3D>
+              </Reveal3D>
             ))}
           </div>
         </div>
       </section>
 
       {/* Brands Grid */}
-      <section className="section-padding bg-navy/30">
-        <div className="container-custom">
+      <section className="section-padding bg-navy/30 relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10">
           <div className="space-y-12">
             {brands.map((brand, index) => (
               <motion.div
@@ -212,18 +219,22 @@ export default function BrandsPage() {
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
-                <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                  <div className="relative h-80 rounded-lg overflow-hidden">
-                    <img
+                <div className={index % 2 === 1 ? "lg:order-2" : ""} style={{ perspective: "1200px" }}>
+                  <Tilt3D maxTilt={9} className="group h-80 overflow-hidden rounded-lg">
+                    <Parallax3DImage
                       src={brand.image}
                       alt={brand.name}
-                      className="w-full h-full object-cover"
+                      className="h-full w-full"
+                      imageClassName="transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent"></div>
-                  </div>
+                  </Tilt3D>
                 </div>
 
-                <div className={index % 2 === 1 ? "lg:order-1" : ""}>
+                <Reveal3D
+                  direction={index % 2 === 1 ? "left" : "right"}
+                  className={index % 2 === 1 ? "lg:order-1" : ""}
+                >
                   <div className="text-orange font-barlow font-bold text-sm tracking-widest mb-2">
                     {brand.category}
                   </div>
@@ -247,7 +258,7 @@ export default function BrandsPage() {
                   <Link href="/products" className="btn-primary inline-block">
                     View Products
                   </Link>
-                </div>
+                </Reveal3D>
               </motion.div>
             ))}
           </div>
@@ -255,15 +266,11 @@ export default function BrandsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-charcoal">
-        <div className="container-custom">
-          <div className="bg-gradient-to-r from-orange to-orange/80 rounded-2xl p-12 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
+      <section className="section-padding bg-charcoal relative overflow-hidden">
+        <FloatingGeometry />
+        <div className="container-custom relative z-10" style={{ perspective: "1200px" }}>
+          <Reveal3D direction="up">
+            <div className="bg-gradient-to-r from-orange to-orange/80 rounded-2xl p-12 text-center shadow-[0_20px_60px_rgba(244,119,33,0.25)]">
               <h2 className="font-barlow font-bold text-4xl md:text-5xl text-white mb-6">
                 Get Expert Product Guidance
               </h2>
@@ -277,8 +284,8 @@ export default function BrandsPage() {
               >
                 Contact Us Today
               </Link>
-            </motion.div>
-          </div>
+            </div>
+          </Reveal3D>
         </div>
       </section>
     </div>
