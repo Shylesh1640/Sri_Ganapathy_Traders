@@ -320,9 +320,9 @@ export default function Home() {
 
   const marqueeItems = [
     "DALMIA CEMENT", "TATA TISCON", "VISAKA", "ASIAN PAINTS",
-    "TATA STRUCTURA", "JSPL", "ULTRATECH", "BERGER PAINTS",
+    "TATA STRUCTURA",
     "DALMIA CEMENT", "TATA TISCON", "VISAKA", "ASIAN PAINTS",
-    "TATA STRUCTURA", "JSPL", "ULTRATECH", "BERGER PAINTS",
+    "TATA STRUCTURA",
   ];
 
   return (
